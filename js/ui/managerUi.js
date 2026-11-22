@@ -10,6 +10,7 @@ import {
   importBuildsJson,
   saveBuild
 } from "../storage.js";
+import { createSearchableInput } from "./searchableSelect.js";
 
 /**
  * @typedef {"hp" | "atk" | "def" | "spa" | "spd" | "spe"} StatName 能力値の識別子。
@@ -154,7 +155,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
           <div class="manager-form-grid">
             <label class="form-field" for="manager-species">
               <span>ポケモン</span>
-              <select id="manager-species" name="speciesId" required></select>
+              <div id="manager-species-input"></div>
             </label>
             <label class="form-field" for="manager-name">
               <span>ニックネーム</span>
@@ -213,7 +214,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
 
   const list = root.querySelector(".manager-build-list");
   const form = root.querySelector(".manager-form");
-  const speciesSelect = root.querySelector("#manager-species");
+  const speciesInputMount = root.querySelector("#manager-species-input");
   const natureSelect = root.querySelector("#manager-nature");
   const abilitySelect = root.querySelector("#manager-ability");
   const itemSelect = root.querySelector("#manager-item");
@@ -226,6 +227,23 @@ export function initManagerUi(masterData, onBuildsChanged) {
   const message = root.querySelector(".manager-message");
   const modeLabel = root.querySelector(".manager-editor-mode");
   const saveButton = root.querySelector(".manager-save-button");
+  let selectedSpeciesId = "";
+  /** @type {ReturnType<typeof createSearchableInput>[]} */
+  let moveSearchInputs = [];
+
+  const speciesSearch = createSearchableInput({
+    id: "manager-species",
+    placeholder: "ポケモン名を検索",
+    items: pokemon.map((species) => ({ value: species.id, label: species.name })),
+    onSelect: (value) => handleSpeciesSelection(String(value)),
+    onClear: () => handleSpeciesSelection("")
+  });
+  if (!(speciesInputMount instanceof HTMLElement)) {
+    throw new Error("ポケモン検索欄を準備できません。");
+  }
+  speciesSearch.input.name = "speciesId";
+  speciesSearch.input.required = true;
+  speciesInputMount.append(speciesSearch.element);
 
   /**
    * 画面に操作結果を表示する。
@@ -280,7 +298,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
    * @returns {void}
    */
   function updateSpeciesOptions(selectedAbility = "", selectedMega = "") {
-    const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+    const species = pokemon.find((entry) => entry.id === selectedSpeciesId);
     const megaForms = asArray(species?.megaForms)
       .filter((form) => typeof form?.name === "string");
     const abilities = asArray(species?.abilities).filter((ability) => typeof ability === "string");
@@ -325,22 +343,52 @@ export function initManagerUi(masterData, onBuildsChanged) {
    * @returns {void}
    */
   function renderMoveFields(selectedMoves = []) {
-    const options = moves.filter((move) => typeof move?.name === "string").map((move) => {
+    const moveItems = moves.filter((move) => typeof move?.name === "string").map((move) => {
       const power = Number(move.power) > 0 ? move.power : "—";
       const category = move.category === "physical" ? "物理"
         : move.category === "special" ? "特殊"
           : move.category === "status" ? "変化" : move.category || "分類不明";
       return {
         value: move.name,
-        label: `${move.name}（${move.type || "タイプ不明"}・${category}・威力${power}）`
+        label: move.name,
+        subText: `${move.type || "タイプ不明"}・${category}・威力${power}`
       };
     });
     moveFields.innerHTML = Array.from({ length: 4 }, (_, index) => `
       <label class="form-field" for="manager-move-${index + 1}">
         <span>技${index + 1}</span>
-        <select id="manager-move-${index + 1}" name="move-${index + 1}">${createOptions(options, selectedMoves[index] || "", "未選択")}</select>
+        <div id="manager-move-input-${index + 1}"></div>
       </label>
     `).join("");
+    moveSearchInputs = Array.from({ length: 4 }, (_, index) => {
+      const selectedMove = moveItems.find((move) => move.value === selectedMoves[index]);
+      const search = createSearchableInput({
+        id: `manager-move-${index + 1}`,
+        placeholder: "技名を検索（任意）",
+        items: moveItems,
+        ...(selectedMove ? { initialValue: selectedMove.value } : {})
+      });
+      search.input.name = `move-${index + 1}`;
+      const mount = root.querySelector(`#manager-move-input-${index + 1}`);
+      if (!(mount instanceof HTMLElement)) {
+        throw new Error(`技${index + 1}の検索欄を準備できません。`);
+      }
+      mount.append(search.element);
+      return search;
+    });
+  }
+
+  /**
+   * ポケモン選択と連動する特性・実数値を更新する。
+   * @param {string} speciesId 選択されたポケモンのID。
+   * @returns {void}
+   */
+  function handleSpeciesSelection(speciesId) {
+    if (selectedSpeciesId === speciesId) return;
+    selectedSpeciesId = speciesId;
+    updateSpeciesOptions();
+    if (itemSelect.value === "メガストーン") itemSelect.value = "なし";
+    updateStats();
   }
 
   /**
@@ -348,7 +396,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
    * @returns {void}
    */
   function updateStats() {
-    const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+    const species = pokemon.find((entry) => entry.id === selectedSpeciesId);
     const points = {};
     for (const { key } of STAT_ROWS) {
       const input = form.elements.namedItem(`point-${key}`);
@@ -414,7 +462,11 @@ export function initManagerUi(masterData, onBuildsChanged) {
   function fillForm(build = null) {
     editingId = build?.id || "";
     form.reset();
-    speciesSelect.value = build?.speciesId || "";
+    selectedSpeciesId = pokemon.some((entry) => entry.id === build?.speciesId)
+      ? build.speciesId
+      : "";
+    if (selectedSpeciesId) speciesSearch.setValue(selectedSpeciesId);
+    else speciesSearch.setValue(null);
     root.querySelector("#manager-name").value = build?.name || "";
     root.querySelector("#manager-memo").value = build?.memo || "";
     natureSelect.value = build?.nature || natures[0]?.name || "";
@@ -441,13 +493,13 @@ export function initManagerUi(masterData, onBuildsChanged) {
       points[key] = Number.isFinite(value) ? Math.min(MAX_POINT, Math.max(0, Math.trunc(value))) : 0;
     }
     const selectedMoves = Array.from({ length: 4 }, (_, index) => {
-      const input = form.elements.namedItem(`move-${index + 1}`);
-      return input instanceof HTMLSelectElement ? input.value : "";
+      const value = moveSearchInputs[index]?.getValue();
+      return typeof value === "string" ? value : "";
     }).filter(Boolean);
 
     return {
       id: editingId || "",
-      speciesId: speciesSelect.value,
+      speciesId: selectedSpeciesId,
       name: root.querySelector("#manager-name").value.trim(),
       memo: root.querySelector("#manager-memo").value.trim(),
       level: LEVEL,
@@ -471,7 +523,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
     const total = Object.values(build.points || {}).reduce((sum, point) => sum + point, 0);
     if (!build.speciesId) {
       setMessage("ポケモンを選択してください。", true);
-      speciesSelect.focus();
+      speciesSearch.input.focus();
       return;
     }
     if (total > TOTAL_POINTS) {
@@ -586,13 +638,11 @@ export function initManagerUi(masterData, onBuildsChanged) {
   function handleFormChange(event) {
     const target = event.target;
     if (!(target instanceof HTMLSelectElement || target instanceof HTMLInputElement)) return;
+    if (target === speciesSearch.input) return;
 
-    if (target === speciesSelect) {
-      updateSpeciesOptions();
-      if (itemSelect.value === "メガストーン") itemSelect.value = "なし";
-    } else if (target === itemSelect) {
+    if (target === itemSelect) {
       if (itemSelect.value === "メガストーン") {
-        const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+        const species = pokemon.find((entry) => entry.id === selectedSpeciesId);
         const firstForm = asArray(species?.megaForms)
           .find((form) => typeof form?.name === "string");
         if (firstForm) {
@@ -606,7 +656,7 @@ export function initManagerUi(masterData, onBuildsChanged) {
     } else if (target === megaSelect) {
       if (megaSelect.value) {
         itemSelect.value = "メガストーン";
-        const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+        const species = pokemon.find((entry) => entry.id === selectedSpeciesId);
         const form = asArray(species?.megaForms)
           .find((entry) => typeof entry?.name === "string" && entry.name === megaSelect.value);
         updateSpeciesOptions(form?.ability || "", megaSelect.value);
@@ -642,8 +692,6 @@ export function initManagerUi(masterData, onBuildsChanged) {
     }
   }
 
-  const speciesOptions = pokemon.map((species) => ({ value: species.id, label: species.name }));
-  speciesSelect.innerHTML = createOptions(speciesOptions, "", "ポケモンを選択");
   natureSelect.innerHTML = createOptions(
     natures.map((nature) => ({ value: nature.name, label: nature.name })),
     "",
@@ -662,6 +710,16 @@ export function initManagerUi(masterData, onBuildsChanged) {
   updateStats();
   form.addEventListener("submit", handleSave);
   form.addEventListener("change", handleFormChange);
+  /**
+   * 入力欄の確定済み候補を個体管理状態へ反映する。
+   * @returns {void}
+   */
+  function syncSpeciesSelection() {
+    const speciesId = String(speciesSearch.getValue() ?? "");
+    if (speciesId !== selectedSpeciesId) handleSpeciesSelection(speciesId);
+  }
+  speciesSearch.input.addEventListener("input", syncSpeciesSelection);
+  speciesSearch.input.addEventListener("compositionend", syncSpeciesSelection);
   form.addEventListener("input", (event) => {
     if (event.target instanceof HTMLInputElement && event.target.classList.contains("manager-point-input")) {
       if (event.target.value !== "") {

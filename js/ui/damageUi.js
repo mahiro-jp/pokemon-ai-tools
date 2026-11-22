@@ -4,6 +4,7 @@ import {
   resolveEffectiveSpecies
 } from "../calculator.js";
 import { getBuilds } from "../storage.js";
+import { createSearchableInput } from "./searchableSelect.js";
 
 /**
  * @typedef {"hp" | "atk" | "def" | "spa" | "spd" | "spe"} StatName 能力値の識別子。
@@ -38,6 +39,10 @@ let savedBuildsById = new Map();
 let selectedMoveName = "";
 /** @type {string[]} */
 let attackerMoveNames = [];
+/** @type {Map<"attacker" | "defender", ReturnType<typeof createSearchableInput>>} */
+let speciesSearchInputs = new Map();
+/** @type {ReturnType<typeof createSearchableInput> | null} */
+let moveSearchInput = null;
 
 /**
  * @typedef {object} DamageSideState
@@ -191,18 +196,16 @@ function updateSideOptions(side, selectedAbility = "", selectedMega = "") {
   if (!rootElement) return;
   const pokemon = asArray(masterData.pokemon);
   const items = asArray(masterData.items);
-  const speciesSelect = rootElement.querySelector(`#damage-${side}-species`);
   const abilitySelect = rootElement.querySelector(`#damage-${side}-ability`);
   const itemSelect = rootElement.querySelector(`#damage-${side}-item`);
   const megaSelect = rootElement.querySelector(`#damage-${side}-mega`);
   const megaField = rootElement.querySelector(`#damage-${side}-mega-field`);
-  if (!(speciesSelect instanceof HTMLSelectElement)
-    || !(abilitySelect instanceof HTMLSelectElement)
+  if (!(abilitySelect instanceof HTMLSelectElement)
     || !(itemSelect instanceof HTMLSelectElement)
     || !(megaSelect instanceof HTMLSelectElement)
     || !(megaField instanceof HTMLElement)) return;
 
-  const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+  const species = pokemon.find((entry) => entry.id === sideStates[side].build.speciesId);
   const megaForms = asArray(species?.megaForms).filter((form) => typeof form?.name === "string");
   const abilities = asArray(species?.abilities).filter((ability) => typeof ability === "string");
   const selectedForm = megaForms.find((form) => form.name === selectedMega);
@@ -251,18 +254,16 @@ function updateSideOptions(side, selectedAbility = "", selectedMega = "") {
  */
 function applySpeciesSide(side, selectedSpecies) {
   if (!rootElement) return;
-  const speciesSelect = rootElement.querySelector(`#damage-${side}-species`);
   const megaSelect = rootElement.querySelector(`#damage-${side}-mega`);
   const itemSelect = rootElement.querySelector(`#damage-${side}-item`);
-  if (!(speciesSelect instanceof HTMLSelectElement)
-    || !(megaSelect instanceof HTMLSelectElement)
+  if (!(megaSelect instanceof HTMLSelectElement)
     || !(itemSelect instanceof HTMLSelectElement)) return;
+  if (sideStates[side].build.speciesId === selectedSpecies) return;
 
   const build = readSideState(side);
   build.speciesId = selectedSpecies;
   build.megaForm = "";
   build.item = "なし";
-  speciesSelect.value = selectedSpecies;
   megaSelect.value = "";
   itemSelect.value = "なし";
   sideStates[side].build = build;
@@ -278,14 +279,12 @@ function applySpeciesSide(side, selectedSpecies) {
  */
 function readSideState(side) {
   if (!rootElement) return normalizeBuild(sideStates[side].build);
-  const speciesSelect = rootElement.querySelector(`#damage-${side}-species`);
   const natureSelect = rootElement.querySelector(`#damage-${side}-nature`);
   const abilitySelect = rootElement.querySelector(`#damage-${side}-ability`);
   const itemSelect = rootElement.querySelector(`#damage-${side}-item`);
   const megaSelect = rootElement.querySelector(`#damage-${side}-mega`);
   const build = normalizeBuild(sideStates[side].build);
 
-  if (speciesSelect instanceof HTMLSelectElement) build.speciesId = speciesSelect.value;
   if (natureSelect instanceof HTMLSelectElement) build.nature = natureSelect.value;
   if (abilitySelect instanceof HTMLSelectElement) build.ability = abilitySelect.value;
   if (itemSelect instanceof HTMLSelectElement) build.item = itemSelect.value || "なし";
@@ -354,10 +353,13 @@ function fillSide(side, build) {
   const normalized = normalizeBuild(build);
   sideStates[side].build = normalized;
 
-  const speciesSelect = rootElement.querySelector(`#damage-${side}-species`);
+  const speciesSearch = speciesSearchInputs.get(side);
   const natureSelect = rootElement.querySelector(`#damage-${side}-nature`);
   const savedSelect = rootElement.querySelector(`#damage-${side}-saved`);
-  if (speciesSelect instanceof HTMLSelectElement) speciesSelect.value = normalized.speciesId;
+  if (speciesSearch) {
+    const speciesExists = pokemon.some((species) => species.id === normalized.speciesId);
+    speciesSearch.setValue(speciesExists ? normalized.speciesId : null);
+  }
   if (natureSelect instanceof HTMLSelectElement) {
     const selectedNature = natures.some((nature) => nature.name === normalized.nature)
       ? normalized.nature
@@ -422,13 +424,13 @@ function swapSides() {
 
 /**
  * 技ボタンの選択表示と技情報を更新する。
+ * @param {boolean} syncSearchInput 検索欄の表示も同期する場合はtrue。
  * @returns {void}
  */
-function updateMoveButtons() {
+function updateMoveButtons(syncSearchInput = true) {
   if (!rootElement) return;
   const moves = asArray(masterData.moves).filter((move) => typeof move?.name === "string");
   const moveButtons = rootElement.querySelectorAll("[data-damage-move]");
-  const moveSelect = rootElement.querySelector("#damage-move-select");
 
   moveButtons.forEach((button, index) => {
     if (!(button instanceof HTMLElement)) return;
@@ -440,18 +442,8 @@ function updateMoveButtons() {
     button.classList.toggle("is-selected", selectedMoveName === moveName && moveName !== "");
   });
 
-  if (moveSelect instanceof HTMLSelectElement) {
-    moveSelect.innerHTML = [
-      '<option value="">技を選択</option>',
-      ...moves.map((move) => {
-        const category = move.category === "physical" ? "物理"
-          : move.category === "special" ? "特殊"
-            : move.category === "status" ? "変化" : "分類不明";
-        return `<option value="${escapeHtml(move.name)}"${move.name === selectedMoveName ? " selected" : ""}>${escapeHtml(move.name)}（${escapeHtml(move.type || "不明")}・${escapeHtml(category)}・威力${escapeHtml(move.power ?? "—")}）</option>`;
-      })
-    ].join("");
-  }
   const selectedMove = moves.find((move) => move.name === selectedMoveName);
+  if (syncSearchInput) moveSearchInput?.setValue(selectedMove ? selectedMove.name : null);
   const badge = rootElement.querySelector("#damage-selected-move-badge");
   if (badge instanceof HTMLElement) {
     badge.innerHTML = selectedMove
@@ -556,10 +548,6 @@ function createSideHtml(side) {
     const rank = index - 6;
     return `<option value="${rank}">${rank >= 0 ? `+${rank}` : String(rank)}</option>`;
   }).join("");
-  const pokemonOptions = asArray(masterData.pokemon)
-    .filter((species) => typeof species?.id === "string")
-    .map((species) => `<option value="${escapeHtml(species.id)}">${escapeHtml(species.name)}</option>`)
-    .join("");
   const natureOptions = asArray(masterData.natures)
     .filter((nature) => typeof nature?.name === "string")
     .map((nature) => `<option value="${escapeHtml(nature.name)}">${escapeHtml(nature.name)}</option>`)
@@ -594,10 +582,7 @@ function createSideHtml(side) {
         </label>
         <label class="form-field" for="damage-${side}-species">
           <span>ポケモン名</span>
-          <select id="damage-${side}-species">
-            <option value="">ポケモンを選択</option>
-            ${pokemonOptions}
-          </select>
+          <div id="damage-${side}-species-input"></div>
         </label>
         <label class="form-field" for="damage-${side}-nature">
           <span>性格</span>
@@ -667,7 +652,7 @@ export function initDamageUi(data) {
         </div>
         <label class="form-field" for="damage-move-select">
           <span>技を直接選択</span>
-          <select id="damage-move-select"></select>
+          <div id="damage-move-input"></div>
         </label>
         <div class="damage-selected-move-badge" id="damage-selected-move-badge"></div>
       </section>
@@ -690,6 +675,97 @@ export function initDamageUi(data) {
       </section>
     </div>
   `;
+
+  speciesSearchInputs = new Map();
+  for (const side of ["attacker", "defender"]) {
+    const mount = root.querySelector(`#damage-${side}-species-input`);
+    if (!(mount instanceof HTMLElement)) {
+      throw new Error(`${side === "attacker" ? "攻撃側" : "防御側"}のポケモン検索欄を準備できません。`);
+    }
+    const search = createSearchableInput({
+      id: `damage-${side}-species`,
+      placeholder: "ポケモン名を検索",
+      items: asArray(masterData.pokemon)
+        .filter((species) => typeof species?.id === "string" && typeof species?.name === "string")
+        .map((species) => ({ value: species.id, label: species.name })),
+      onSelect: (value) => applySpeciesSide(side, String(value)),
+      onClear: () => applySpeciesSide(side, "")
+    });
+    mount.append(search.element);
+    speciesSearchInputs.set(side, search);
+    /**
+     * 検索欄の確定済みポケモンを対象ペインへ反映する。
+     * @returns {void}
+     */
+    function syncSpeciesSelection() {
+      const speciesId = String(search.getValue() ?? "");
+      if (speciesId !== sideStates[side].build.speciesId) {
+        applySpeciesSide(side, speciesId);
+      }
+    }
+    search.input.addEventListener("input", syncSpeciesSelection);
+    search.input.addEventListener("compositionend", syncSpeciesSelection);
+  }
+
+  const moveMount = root.querySelector("#damage-move-input");
+  if (!(moveMount instanceof HTMLElement)) {
+    throw new Error("技の検索欄を準備できません。");
+  }
+  const moveItems = asArray(masterData.moves)
+    .filter((move) => typeof move?.name === "string")
+    .map((move) => {
+      const category = move.category === "physical" ? "物理"
+        : move.category === "special" ? "特殊"
+          : move.category === "status" ? "変化" : "分類不明";
+      return {
+        value: move.name,
+        label: move.name,
+        subText: `${move.type || "不明"}・${category}・威力${move.power ?? "—"}`
+      };
+    });
+
+  /**
+   * 検索欄で選んだ技を選択中の技と技枠へ反映する。
+   * @param {string | number} value 選択された技名。
+   * @returns {void}
+   */
+  function selectMove(value) {
+    selectedMoveName = String(value);
+    const emptyIndex = attackerMoveNames.findIndex((name) => name === "");
+    if (emptyIndex >= 0) attackerMoveNames[emptyIndex] = selectedMoveName;
+    updateMoveButtons();
+    calculateAndRender();
+  }
+
+  /**
+   * 技の検索欄をクリアして選択中の技を解除する。
+   * @param {boolean} syncSearchInput 検索欄の表示も同期する場合はtrue。
+   * @returns {void}
+   */
+  function clearMove(syncSearchInput = true) {
+    selectedMoveName = "";
+    updateMoveButtons(syncSearchInput);
+    calculateAndRender();
+  }
+
+  moveSearchInput = createSearchableInput({
+    id: "damage-move-select",
+    placeholder: "技名を検索",
+    items: moveItems,
+    onSelect: selectMove,
+    onClear: clearMove
+  });
+  moveMount.append(moveSearchInput.element);
+  /**
+   * 技の検索欄で候補外の文字列を入力した場合に選択中の技を解除する。
+   * @returns {void}
+   */
+  function syncMoveSelection() {
+    const isExactMove = moveSearchInput.getValue() !== null;
+    if (!isExactMove && selectedMoveName) clearMove(false);
+  }
+  moveSearchInput.input.addEventListener("input", syncMoveSelection);
+  moveSearchInput.input.addEventListener("compositionend", syncMoveSelection);
 
   refreshDamageSavedBuilds();
 
@@ -737,7 +813,6 @@ export function initDamageUi(data) {
   updateMoveButtons();
 
   for (const side of ["attacker", "defender"]) {
-    const speciesSelect = root.querySelector(`#damage-${side}-species`);
     const savedSelect = root.querySelector(`#damage-${side}-saved`);
     const natureSelect = root.querySelector(`#damage-${side}-nature`);
     const abilitySelect = root.querySelector(`#damage-${side}-ability`);
@@ -750,18 +825,14 @@ export function initDamageUi(data) {
       const build = savedBuildsById.get(savedSelect.value);
       if (build) setPokemonToSide(side, build);
     });
-    speciesSelect?.addEventListener("change", () => {
-      if (speciesSelect instanceof HTMLSelectElement) applySpeciesSide(side, speciesSelect.value);
-    });
     natureSelect?.addEventListener("change", () => calculateAndRender());
     abilitySelect?.addEventListener("change", () => calculateAndRender());
     itemSelect?.addEventListener("change", () => {
       if (!(itemSelect instanceof HTMLSelectElement)) return;
       const pokemon = asArray(masterData.pokemon);
-      const speciesSelect = root.querySelector(`#damage-${side}-species`);
       const megaSelect = root.querySelector(`#damage-${side}-mega`);
-      if (!(speciesSelect instanceof HTMLSelectElement) || !(megaSelect instanceof HTMLSelectElement)) return;
-      const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+      if (!(megaSelect instanceof HTMLSelectElement)) return;
+      const species = pokemon.find((entry) => entry.id === sideStates[side].build.speciesId);
       const megaForms = asArray(species?.megaForms);
       if (itemSelect.value === "メガストーン" && megaForms.length > 0) {
         const firstForm = megaForms[0];
@@ -777,12 +848,10 @@ export function initDamageUi(data) {
       if (!(megaSelect instanceof HTMLSelectElement) || !(itemSelect instanceof HTMLSelectElement)) return;
       if (megaSelect.value) {
         itemSelect.value = "メガストーン";
-        const speciesSelect = root.querySelector(`#damage-${side}-species`);
-        if (speciesSelect instanceof HTMLSelectElement) {
-          const species = asArray(masterData.pokemon).find((entry) => entry.id === speciesSelect.value);
-          const form = asArray(species?.megaForms).find((entry) => entry.name === megaSelect.value);
-          updateSideOptions(side, form?.ability || "", megaSelect.value);
-        }
+        const species = asArray(masterData.pokemon)
+          .find((entry) => entry.id === sideStates[side].build.speciesId);
+        const form = asArray(species?.megaForms).find((entry) => entry.name === megaSelect.value);
+        updateSideOptions(side, form?.ability || "", megaSelect.value);
       } else {
         itemSelect.value = "なし";
         updateSideOptions(side);
@@ -813,24 +882,12 @@ export function initDamageUi(data) {
       const index = Number(button.getAttribute("data-damage-move"));
       if (attackerMoveNames[index]) {
         selectedMoveName = attackerMoveNames[index];
-      } else {
-        const select = root.querySelector("#damage-move-select");
-        if (select instanceof HTMLSelectElement && select.value) {
-          attackerMoveNames[index] = select.value;
-          selectedMoveName = select.value;
-        }
+      } else if (selectedMoveName) {
+        attackerMoveNames[index] = selectedMoveName;
       }
       updateMoveButtons();
       calculateAndRender();
     });
-  });
-  root.querySelector("#damage-move-select")?.addEventListener("change", (event) => {
-    if (!(event.target instanceof HTMLSelectElement)) return;
-    selectedMoveName = event.target.value;
-    const emptyIndex = attackerMoveNames.findIndex((name, index) => index < 4 && name === "");
-    if (selectedMoveName && emptyIndex >= 0) attackerMoveNames[emptyIndex] = selectedMoveName;
-    updateMoveButtons();
-    calculateAndRender();
   });
   root.querySelector(".damage-swap-button")?.addEventListener("click", swapSides);
   root.querySelector("#damage-critical")?.addEventListener("change", calculateAndRender);

@@ -1,6 +1,7 @@
 import { calculateStats, resolveEffectiveSpecies } from "../calculator.js";
 import { requestBuildAdjustment } from "../geminiApi.js";
 import { getBuilds, saveBuild } from "../storage.js";
+import { createSearchableInput } from "./searchableSelect.js";
 
 /**
  * @typedef {"hp" | "atk" | "def" | "spa" | "spd" | "spe"} StatName 能力値の識別子。
@@ -215,7 +216,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
         <div class="advisor-form-grid">
           <label class="form-field" for="advisor-species">
             <span>対象ポケモン</span>
-            <select id="advisor-species" name="speciesId" required></select>
+            <div id="advisor-species-input"></div>
           </label>
           <label class="form-field" for="advisor-saved-build">
             <span>保存済み個体から読み込む</span>
@@ -253,7 +254,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
   `;
 
   const form = root.querySelector(".advisor-form");
-  const speciesSelect = root.querySelector("#advisor-species");
+  const speciesInputMount = root.querySelector("#advisor-species-input");
   const savedBuildSelect = root.querySelector("#advisor-saved-build");
   const requestInput = root.querySelector("#advisor-request");
   const submitButton = root.querySelector(".advisor-submit");
@@ -263,7 +264,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
   const resultElement = root.querySelector(".advisor-result");
 
   if (!(form instanceof HTMLFormElement)
-    || !(speciesSelect instanceof HTMLSelectElement)
+    || !(speciesInputMount instanceof HTMLElement)
     || !(savedBuildSelect instanceof HTMLSelectElement)
     || !(requestInput instanceof HTMLTextAreaElement)
     || !(submitButton instanceof HTMLButtonElement)
@@ -291,7 +292,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
    */
   function updateSubmitState() {
     submitButton.disabled = isRequesting
-      || !speciesSelect.value
+      || !currentSpecies
       || requestInput.value.trim() === "";
   }
 
@@ -430,25 +431,40 @@ export function initAdvisorUi(masterData, callbacks = {}) {
     updateSubmitState();
   }
 
-  speciesSelect.innerHTML = [
-    '<option value="">ポケモンを選択してください</option>',
-    ...pokemon.map((species) =>
-      `<option value="${escapeHtml(species.id)}">${escapeHtml(species.name)}</option>`
-    )
-  ].join("");
-  renderSavedBuildOptions();
-  selectSpecies(pokemon.find((species) => species.id === speciesSelect.value));
-
-  speciesSelect.addEventListener("change", () => {
-    savedBuildSelect.value = "";
-    selectSpecies(pokemon.find((species) => species.id === speciesSelect.value));
-    setMessage("");
+  const speciesSearch = createSearchableInput({
+    id: "advisor-species",
+    placeholder: "ポケモン名を検索",
+    items: pokemon.map((species) => ({ value: species.id, label: species.name })),
+    onSelect: (value) => selectSpecies(pokemon.find((species) => species.id === String(value))),
+    onClear: () => {
+      savedBuildSelect.value = "";
+      selectSpecies(undefined);
+    }
   });
+  speciesSearch.input.name = "speciesId";
+  speciesSearch.input.required = true;
+  speciesInputMount.append(speciesSearch.element);
+  renderSavedBuildOptions();
+  selectSpecies(undefined);
+
+  /**
+   * 対象ポケモンの確定済み候補を提案画面へ反映する。
+   * @returns {void}
+   */
+  function syncSpeciesSelection() {
+    const speciesId = String(speciesSearch.getValue() ?? "");
+    const species = pokemon.find((entry) => entry.id === speciesId);
+    if (species?.id !== currentSpecies?.id) selectSpecies(species);
+    savedBuildSelect.value = "";
+    setMessage("");
+  }
+  speciesSearch.input.addEventListener("input", syncSpeciesSelection);
+  speciesSearch.input.addEventListener("compositionend", syncSpeciesSelection);
 
   savedBuildSelect.addEventListener("change", () => {
     const build = savedBuilds.find((entry) => entry.id === savedBuildSelect.value);
     if (!build) {
-      selectSpecies(pokemon.find((species) => species.id === speciesSelect.value));
+      selectSpecies(currentSpecies ?? undefined);
       setMessage("");
       return;
     }
@@ -458,7 +474,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
       setMessage("保存済み個体のポケモンがマスターデータにありません。", true);
       return;
     }
-    speciesSelect.value = species.id;
+    speciesSearch.setValue(species.id);
     currentSpecies = species;
     currentBuild = createBaseBuild(species, build, data);
     currentProposal = null;
@@ -483,7 +499,7 @@ export function initAdvisorUi(masterData, callbacks = {}) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (isRequesting) return;
-    const species = pokemon.find((entry) => entry.id === speciesSelect.value);
+    const species = currentSpecies;
     const userRequest = requestInput.value.trim();
     if (!species || !userRequest) {
       setMessage("対象ポケモンと調整要望を入力してください。", true);
@@ -500,8 +516,9 @@ export function initAdvisorUi(masterData, callbacks = {}) {
     spinner.hidden = false;
     submitButton.setAttribute("aria-busy", "true");
     root.classList.add("is-requesting");
-    root.querySelectorAll("select, textarea, [data-advisor-template]").forEach((control) => {
-      if (control instanceof HTMLSelectElement
+    root.querySelectorAll("input, select, textarea, .searchable-input-clear, [data-advisor-template]").forEach((control) => {
+      if (control instanceof HTMLInputElement
+        || control instanceof HTMLSelectElement
         || control instanceof HTMLTextAreaElement
         || control instanceof HTMLButtonElement) {
         control.disabled = true;
@@ -540,8 +557,9 @@ export function initAdvisorUi(masterData, callbacks = {}) {
       spinner.hidden = true;
       submitButton.removeAttribute("aria-busy");
       root.classList.remove("is-requesting");
-      root.querySelectorAll("select, textarea, [data-advisor-template]").forEach((control) => {
-        if (control instanceof HTMLSelectElement
+      root.querySelectorAll("input, select, textarea, .searchable-input-clear, [data-advisor-template]").forEach((control) => {
+        if (control instanceof HTMLInputElement
+          || control instanceof HTMLSelectElement
           || control instanceof HTMLTextAreaElement
           || control instanceof HTMLButtonElement) {
           control.disabled = false;

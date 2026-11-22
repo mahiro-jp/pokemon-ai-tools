@@ -277,6 +277,44 @@ select:focus-visible {
   background: #fff;
 }
 
+.searchable-input {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+.searchable-input input {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--color-text);
+  background: #fff;
+}
+
+.searchable-input-clear {
+  flex: 0 0 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0;
+  color: var(--color-muted);
+  background: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  touch-action: manipulation;
+}
+
+.searchable-input-clear:hover {
+  color: var(--color-text);
+  background: #edf2f7;
+}
+
 .form-message {
   min-height: 1.5em;
   margin: -10px 0;
