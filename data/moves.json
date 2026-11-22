@@ -1,21 +1,41 @@
 [
   {
-    "id": "earthquake",
-    "name": "じしん",
-    "type": "ground",
+    "id": "triple-arrows",
+    "name": "3ぼんのや",
+    "type": "fighting",
     "category": "physical",
-    "power": 100,
+    "power": 90,
     "accuracy": 100,
     "isContact": false,
-    "isSpread": true
+    "isSpread": false
   },
   {
-    "id": "outrage",
-    "name": "げきりん",
-    "type": "dragon",
-    "category": "physical",
+    "id": "armor-cannon",
+    "name": "アーマーキャノン",
+    "type": "fire",
+    "category": "special",
     "power": 120,
     "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hammer-arm",
+    "name": "アームハンマー",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "iron-tail",
+    "name": "アイアンテール",
+    "type": "steel",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 75,
     "isContact": true,
     "isSpread": false
   },
@@ -25,6 +45,756 @@
     "type": "steel",
     "category": "physical",
     "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "steel-roller",
+    "name": "アイアンローラー",
+    "type": "steel",
+    "category": "physical",
+    "power": 130,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "ice-spinner",
+    "name": "アイススピナー",
+    "type": "ice",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "ice-hammer",
+    "name": "アイスハンマー",
+    "type": "ice",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aqua-cutter",
+    "name": "アクアカッター",
+    "type": "water",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "aqua-jet",
+    "name": "アクアジェット",
+    "type": "water",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aqua-step",
+    "name": "アクアステップ",
+    "type": "water",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aqua-tail",
+    "name": "アクアテール",
+    "type": "water",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "liquidation",
+    "name": "アクアブレイク",
+    "type": "water",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aqua-ring",
+    "name": "アクアリング",
+    "type": "water",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "accelerock",
+    "name": "アクセルロック",
+    "type": "rock",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dark-pulse",
+    "name": "あくのはどう",
+    "type": "dark",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "yawn",
+    "name": "あくび",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "acrobatics",
+    "name": "アクロバット",
+    "type": "flying",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "morning-sun",
+    "name": "あさのひざし",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "stored-power",
+    "name": "アシストパワー",
+    "type": "psychic",
+    "category": "special",
+    "power": 20,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "acid-spray",
+    "name": "アシッドボム",
+    "type": "poison",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dig",
+    "name": "あなをほる",
+    "type": "ground",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "thrash",
+    "name": "あばれる",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "sweet-scent",
+    "name": "あまいかおり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "charm",
+    "name": "あまえる",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rain-dance",
+    "name": "あまごい",
+    "type": "water",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "confuse-ray",
+    "name": "あやしいひかり",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "aromatic-mist",
+    "name": "アロマミスト",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "encore",
+    "name": "アンコール",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "gastro-acid",
+    "name": "いえき",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "foul-play",
+    "name": "イカサマ",
+    "type": "dark",
+    "category": "physical",
+    "power": 95,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "rage-powder",
+    "name": "いかりのこな",
+    "type": "bug",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "super-fang",
+    "name": "いかりのまえば",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "pain-split",
+    "name": "いたみわけ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "torment",
+    "name": "いちゃもん",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "string-shot",
+    "name": "いとをはく",
+    "type": "bug",
+    "category": "status",
+    "power": null,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "final-gambit",
+    "name": "いのちがけ",
+    "type": "fighting",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "life-dew",
+    "name": "いのちのしずく",
+    "type": "water",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "swagger",
+    "name": "いばる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "snore",
+    "name": "いびき",
+    "type": "normal",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "heal-bell",
+    "name": "いやしのすず",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "healing-wish",
+    "name": "いやしのねがい",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "heal-pulse",
+    "name": "いやしのはどう",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "screech",
+    "name": "いやなおと",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rock-slide",
+    "name": "いわなだれ",
+    "type": "rock",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "close-combat",
+    "name": "インファイト",
+    "type": "fighting",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "wave-crash",
+    "name": "ウェーブタックル",
+    "type": "water",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "weather-ball",
+    "name": "ウェザーボール",
+    "type": "normal",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "whirlpool",
+    "name": "うずしお",
+    "type": "water",
+    "category": "special",
+    "power": 35,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fake-tears",
+    "name": "うそなき",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sing",
+    "name": "うたう",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 55,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sparkling-aria",
+    "name": "うたかたのアリア",
+    "type": "water",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "smack-down",
+    "name": "うちおとす",
+    "type": "rock",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "wood-hammer",
+    "name": "ウッドハンマー",
+    "type": "grass",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "horn-leech",
+    "name": "ウッドホーン",
+    "type": "grass",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "lash-out",
+    "name": "うっぷんばらし",
+    "type": "dark",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "spite",
+    "name": "うらみ",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "bitter-malice",
+    "name": "うらみつらみ",
+    "type": "ghost",
+    "category": "special",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "air-cutter",
+    "name": "エアカッター",
+    "type": "flying",
+    "category": "special",
+    "power": 60,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "air-slash",
+    "name": "エアスラッシュ",
+    "type": "flying",
+    "category": "special",
+    "power": 75,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "energy-ball",
+    "name": "エナジーボール",
+    "type": "grass",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "electroweb",
+    "name": "エレキネット",
+    "type": "electric",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "electric-terrain",
+    "name": "エレキフィールド",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "electro-ball",
+    "name": "エレキボール",
+    "type": "electric",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "electro-shot",
+    "name": "エレクトロビーム",
+    "type": "electric",
+    "category": "special",
+    "power": 130,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "overdrive",
+    "name": "オーバードライブ",
+    "type": "electric",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "overheat",
+    "name": "オーバーヒート",
+    "type": "fire",
+    "category": "special",
+    "power": 130,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "aura-wheel",
+    "name": "オーラぐるま",
+    "type": "electric",
+    "category": "physical",
+    "power": 110,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "aurora-veil",
+    "name": "オーロラベール",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "tailwind",
+    "name": "おいかぜ",
+    "type": "flying",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "tidy-up",
+    "name": "おかたづけ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "memento",
+    "name": "おきみやげ",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "after-you",
+    "name": "おさきにどうぞ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "noble-roar",
+    "name": "おたけび",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flatter",
+    "name": "おだてる",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "teatime",
+    "name": "おちゃかい",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "will-o-wisp",
+    "name": "おにび",
+    "type": "fire",
+    "category": "status",
+    "power": null,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "last-respects",
+    "name": "おはかまいり",
+    "type": "ghost",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "eerie-impulse",
+    "name": "かいでんぱ",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "counter",
+    "name": "カウンター",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
     "accuracy": 100,
     "isContact": true,
     "isSpread": false
@@ -40,9 +810,279 @@
     "isSpread": false
   },
   {
-    "id": "flare-blitz",
-    "name": "フレアドライブ",
+    "id": "pyro-ball",
+    "name": "かえんボール",
     "type": "fire",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "axe-kick",
+    "name": "かかとおとし",
+    "type": "fighting",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shadow-sneak",
+    "name": "かげうち",
+    "type": "ghost",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "spirit-shackle",
+    "name": "かげぬい",
+    "type": "ghost",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "double-team",
+    "name": "かげぶんしん",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "disable",
+    "name": "かなしばり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "pollen-puff",
+    "name": "かふんだんご",
+    "type": "bug",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "crunch",
+    "name": "かみくだく",
+    "type": "dark",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bite",
+    "name": "かみつく",
+    "type": "dark",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "thunder",
+    "name": "かみなり",
+    "type": "electric",
+    "category": "special",
+    "power": 110,
+    "accuracy": 70,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "thunder-fang",
+    "name": "かみなりのキバ",
+    "type": "electric",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "thunder-punch",
+    "name": "かみなりパンチ",
+    "type": "electric",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "facade",
+    "name": "からげんき",
+    "type": "normal",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shell-smash",
+    "name": "からをやぶる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "brick-break",
+    "name": "かわらわり",
+    "type": "fighting",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "guard-split",
+    "name": "ガードシェア",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "guard-swap",
+    "name": "ガードスワップ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "endeavor",
+    "name": "がむしゃら",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "stone-axe",
+    "name": "がんせきアックス",
+    "type": "rock",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "rock-tomb",
+    "name": "がんせきふうじ",
+    "type": "rock",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rock-wrecker",
+    "name": "がんせきほう",
+    "type": "rock",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "focus-blast",
+    "name": "きあいだま",
+    "type": "fighting",
+    "category": "special",
+    "power": 120,
+    "accuracy": 70,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "focus-energy",
+    "name": "きあいだめ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "focus-punch",
+    "name": "きあいパンチ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "reversal",
+    "name": "きしかいせい",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "fickle-beam",
+    "name": "きまぐレーザー",
+    "type": "dragon",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "leech-life",
+    "name": "きゅうけつ",
+    "type": "bug",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "glaive-rush",
+    "name": "きょけんとつげき",
+    "type": "dragon",
     "category": "physical",
     "power": 120,
     "accuracy": 100,
@@ -50,13 +1090,423 @@
     "isSpread": false
   },
   {
-    "id": "shadow-ball",
-    "name": "シャドーボール",
-    "type": "ghost",
-    "category": "special",
+    "id": "mortal-spin",
+    "name": "キラースピン",
+    "type": "poison",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": true
+  },
+  {
+    "id": "slash",
+    "name": "きりさく",
+    "type": "normal",
+    "category": "physical",
     "power": 80,
     "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "defog",
+    "name": "きりばらい",
+    "type": "flying",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
     "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "kings-shield",
+    "name": "キングシールド",
+    "type": "steel",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "metal-sound",
+    "name": "きんぞくおん",
+    "type": "steel",
+    "category": "status",
+    "power": null,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "shift-gear",
+    "name": "ギアチェンジ",
+    "type": "steel",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "giga-impact",
+    "name": "ギガインパクト",
+    "type": "normal",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "giga-drain",
+    "name": "ギガドレイン",
+    "type": "grass",
+    "category": "special",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flip-turn",
+    "name": "クイックターン",
+    "type": "water",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "grass-knot",
+    "name": "くさむすび",
+    "type": "grass",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "trailblaze",
+    "name": "くさわけ",
+    "type": "grass",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "tickle",
+    "name": "くすぐる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "beak-blast",
+    "name": "くちばしキャノン",
+    "type": "flying",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "jaw-lock",
+    "name": "くらいつく",
+    "type": "dark",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "crabhammer",
+    "name": "クラブハンマー",
+    "type": "water",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "clear-smog",
+    "name": "クリアスモッグ",
+    "type": "poison",
+    "category": "special",
+    "power": 50,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "haze",
+    "name": "くろいきり",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mean-look",
+    "name": "くろいまなざし",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "cross-chop",
+    "name": "クロスチョップ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 80,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "cross-poison",
+    "name": "クロスポイズン",
+    "type": "poison",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "grassy-glide",
+    "name": "グラススライダー",
+    "type": "grass",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "grassy-terrain",
+    "name": "グラスフィールド",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "low-kick",
+    "name": "けたぐり",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "outrage",
+    "name": "げきりん",
+    "type": "dragon",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "belch",
+    "name": "ゲップ",
+    "type": "poison",
+    "category": "special",
+    "power": 120,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "ancient-power",
+    "name": "げんしのちから",
+    "type": "rock",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "coaching",
+    "name": "コーチング",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "court-change",
+    "name": "コートチェンジ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "synthesis",
+    "name": "こうごうせい",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "agility",
+    "name": "こうそくいどう",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rapid-spin",
+    "name": "こうそくスピン",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "frost-breath",
+    "name": "こおりのいぶき",
+    "type": "ice",
+    "category": "special",
+    "power": 60,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "ice-fang",
+    "name": "こおりのキバ",
+    "type": "ice",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "ice-shard",
+    "name": "こおりのつぶて",
+    "type": "ice",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "icy-wind",
+    "name": "こごえるかぜ",
+    "type": "ice",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "cosmic-power",
+    "name": "コスモパワー",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "cotton-guard",
+    "name": "コットンガード",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "follow-me",
+    "name": "このゆびとまれ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "meteor-mash",
+    "name": "コメットパンチ",
+    "type": "steel",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "endure",
+    "name": "こらえる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "scary-face",
+    "name": "こわいかお",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "phantom-force",
+    "name": "ゴーストダイブ",
+    "type": "ghost",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
     "isSpread": false
   },
   {
@@ -65,27 +1515,37 @@
     "type": "steel",
     "category": "special",
     "power": 120,
-    "accuracy": 100,
+    "accuracy": 95,
     "isContact": false,
     "isSpread": true
   },
   {
-    "id": "moonblast",
-    "name": "ムーンフォース",
-    "type": "fairy",
-    "category": "special",
-    "power": 95,
-    "accuracy": 100,
+    "id": "sky-attack",
+    "name": "ゴッドバード",
+    "type": "flying",
+    "category": "physical",
+    "power": 140,
+    "accuracy": 90,
     "isContact": false,
     "isSpread": false
   },
   {
-    "id": "stone-edge",
-    "name": "ストーンエッジ",
-    "type": "rock",
+    "id": "revival-blessing",
+    "name": "さいきのいのり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "psycho-cut",
+    "name": "サイコカッター",
+    "type": "psychic",
     "category": "physical",
-    "power": 100,
-    "accuracy": 80,
+    "power": 70,
+    "accuracy": 100,
     "isContact": false,
     "isSpread": false
   },
@@ -100,13 +1560,3353 @@
     "isSpread": false
   },
   {
-    "id": "close-combat",
-    "name": "インファイト",
+    "id": "psyshock",
+    "name": "サイコショック",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "psychic-noise",
+    "name": "サイコノイズ",
+    "type": "psychic",
+    "category": "special",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "psychic-fangs",
+    "name": "サイコファング",
+    "type": "psychic",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "psychic-terrain",
+    "name": "サイコフィールド",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "ally-switch",
+    "name": "サイドチェンジ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "instruct",
+    "name": "さいはい",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hypnosis",
+    "name": "さいみんじゅつ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": 60,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "quash",
+    "name": "さきおくり",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "chilly-reception",
+    "name": "さむいギャグ",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "uproar",
+    "name": "さわぐ",
+    "type": "normal",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "supercell-slam",
+    "name": "サンダーダイブ",
+    "type": "electric",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shell-side-arm",
+    "name": "シェルアームズ",
+    "type": "poison",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "razor-shell",
+    "name": "シェルブレード",
+    "type": "water",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "salt-cure",
+    "name": "しおづけ",
+    "type": "rock",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "water-spout",
+    "name": "しおふき",
+    "type": "water",
+    "category": "special",
+    "power": 150,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "x-scissor",
+    "name": "シザークロス",
+    "type": "bug",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "burning-jealousy",
+    "name": "しっとのほのお",
+    "type": "fire",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "payback",
+    "name": "しっぺがえし",
+    "type": "dark",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shed-tail",
+    "name": "しっぽきり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "zen-headbutt",
+    "name": "しねんのずつき",
+    "type": "psychic",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "stun-spore",
+    "name": "しびれごな",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 75,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "bind",
+    "name": "しめつける",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 85,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "matcha-gotcha",
+    "name": "シャカシャカほう",
+    "type": "grass",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "shadow-claw",
+    "name": "シャドークロー",
+    "type": "ghost",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shadow-punch",
+    "name": "シャドーパンチ",
+    "type": "ghost",
+    "category": "physical",
+    "power": 60,
+    "accuracy": null,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shadow-ball",
+    "name": "シャドーボール",
+    "type": "ghost",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "vacuum-wave",
+    "name": "しんくうは",
+    "type": "fighting",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "extreme-speed",
+    "name": "しんそく",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "safeguard",
+    "name": "しんぴのまもり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "simple-beam",
+    "name": "シンプルビーム",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "grav-apple",
+    "name": "Gのちから",
+    "type": "grass",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "jet-punch",
+    "name": "ジェットパンチ",
+    "type": "water",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "psych-up",
+    "name": "じこあんじ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "recover",
+    "name": "じこさいせい",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "throat-chop",
+    "name": "じごくづき",
+    "type": "dark",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "earthquake",
+    "name": "じしん",
+    "type": "ground",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "flail",
+    "name": "じたばた",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "stomping-tantrum",
+    "name": "じだんだ",
+    "type": "ground",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bulldoze",
+    "name": "じならし",
+    "type": "ground",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "self-destruct",
+    "name": "じばく",
+    "type": "normal",
+    "category": "physical",
+    "power": 200,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "magnetic-flux",
+    "name": "じばそうさ",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "gyro-ball",
+    "name": "ジャイロボール",
+    "type": "steel",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "play-rough",
+    "name": "じゃれつく",
+    "type": "fairy",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "charge",
+    "name": "じゅうでん",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "high-horsepower",
+    "name": "10まんばりき",
+    "type": "ground",
+    "category": "physical",
+    "power": 95,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "thunderbolt",
+    "name": "10まんボルト",
+    "type": "electric",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "gravity",
+    "name": "じゅうりょく",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fissure",
+    "name": "じわれ",
+    "type": "ground",
+    "category": "physical",
+    "power": null,
+    "accuracy": 30,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "extrasensory",
+    "name": "じんつうりき",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "tail-slap",
+    "name": "スイープビンタ",
+    "type": "normal",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 85,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "skill-swap",
+    "name": "スキルスワップ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "scale-shot",
+    "name": "スケイルショット",
+    "type": "dragon",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "clanging-scales",
+    "name": "スケイルノイズ",
+    "type": "dragon",
+    "category": "special",
+    "power": 110,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "meteor-assault",
+    "name": "スターアサルト",
+    "type": "fighting",
+    "category": "physical",
+    "power": 170,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "parting-shot",
+    "name": "すてゼリフ",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "double-edge",
+    "name": "すてみタックル",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "stealth-rock",
+    "name": "ステルスロック",
+    "type": "rock",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "stone-edge",
+    "name": "ストーンエッジ",
+    "type": "rock",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 80,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sandstorm",
+    "name": "すなあらし",
+    "type": "rock",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sand-tomb",
+    "name": "すなじごく",
+    "type": "ground",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "speed-swap",
+    "name": "スピードスワップ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "smart-strike",
+    "name": "スマートホーン",
+    "type": "steel",
+    "category": "physical",
+    "power": 70,
+    "accuracy": null,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "switcheroo",
+    "name": "すりかえ",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "growth",
+    "name": "せいちょう",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sacred-sword",
+    "name": "せいなるつるぎ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "sheer-cold",
+    "name": "ぜったいれいど",
+    "type": "ice",
+    "category": "special",
+    "power": null,
+    "accuracy": 30,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "solar-beam",
+    "name": "ソーラービーム",
+    "type": "grass",
+    "category": "special",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "solar-blade",
+    "name": "ソーラーブレード",
+    "type": "grass",
+    "category": "physical",
+    "power": 125,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "electrify",
+    "name": "そうでん",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "spirit-break",
+    "name": "ソウルクラッシュ",
+    "type": "fairy",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "clangorous-soul",
+    "name": "ソウルビート",
+    "type": "dragon",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fly",
+    "name": "そらをとぶ",
+    "type": "flying",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "waterfall",
+    "name": "たきのぼり",
+    "type": "water",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "stockpile",
+    "name": "たくわえる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "octolock",
+    "name": "たこがため",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hex",
+    "name": "たたりめ",
+    "type": "ghost",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "shelter",
+    "name": "たてこもる",
+    "type": "steel",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "seed-bomb",
+    "name": "タネばくだん",
+    "type": "grass",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "bullet-seed",
+    "name": "タネマシンガン",
+    "type": "grass",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "earth-power",
+    "name": "だいちのちから",
+    "type": "ground",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "terrain-pulse",
+    "name": "だいちのはどう",
+    "type": "normal",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "explosion",
+    "name": "だいばくはつ",
+    "type": "normal",
+    "category": "physical",
+    "power": 250,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "dive",
+    "name": "ダイビング",
+    "type": "water",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "raging-fury",
+    "name": "だいふんげき",
+    "type": "fire",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fire-blast",
+    "name": "だいもんじ",
+    "type": "fire",
+    "category": "special",
+    "power": 110,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "muddy-water",
+    "name": "だくりゅう",
+    "type": "water",
+    "category": "special",
+    "power": 90,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "gunk-shot",
+    "name": "ダストシュート",
+    "type": "poison",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 80,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "double-hit",
+    "name": "ダブルアタック",
+    "type": "normal",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dual-wingbeat",
+    "name": "ダブルウイング",
+    "type": "flying",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "assurance",
+    "name": "ダメおし",
+    "type": "dark",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "minimize",
+    "name": "ちいさくなる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "strength-sap",
+    "name": "ちからをすいとる",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "seismic-toss",
+    "name": "ちきゅうなげ",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "charge-beam",
+    "name": "チャージビーム",
+    "type": "electric",
+    "category": "special",
+    "power": 50,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "quiver-dance",
+    "name": "ちょうのまい",
+    "type": "bug",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "taunt",
+    "name": "ちょうはつ",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "pluck",
+    "name": "ついばむ",
+    "type": "flying",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "twin-beam",
+    "name": "ツインビーム",
+    "type": "psychic",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "moonlight",
+    "name": "つきのひかり",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "power-trip",
+    "name": "つけあがる",
+    "type": "dark",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "night-slash",
+    "name": "つじぎり",
+    "type": "dark",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "horn-drill",
+    "name": "つのドリル",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 30,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aerial-ace",
+    "name": "つばめがえし",
+    "type": "flying",
+    "category": "physical",
+    "power": 60,
+    "accuracy": null,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "baby-doll-eyes",
+    "name": "つぶらなひとみ",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "acupressure",
+    "name": "つぼをつく",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "icicle-crash",
+    "name": "つららおとし",
+    "type": "ice",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "icicle-spear",
+    "name": "つららばり",
+    "type": "ice",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "swords-dance",
+    "name": "つるぎのまい",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "helping-hand",
+    "name": "てだすけ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "steel-beam",
+    "name": "てっていこうせん",
+    "type": "steel",
+    "category": "special",
+    "power": 140,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "iron-defense",
+    "name": "てっぺき",
+    "type": "steel",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sweet-kiss",
+    "name": "てんしのキッス",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": 75,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "first-impression",
+    "name": "であいがしら",
+    "type": "bug",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "darkest-lariat",
+    "name": "DDラリアット",
+    "type": "dark",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "gigaton-hammer",
+    "name": "デカハンマー",
+    "type": "steel",
+    "category": "physical",
+    "power": 160,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "decorate",
+    "name": "デコレーション",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "quick-attack",
+    "name": "でんこうせっか",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "double-shock",
+    "name": "でんこうそうげき",
+    "type": "electric",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "thunder-wave",
+    "name": "でんじは",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "magnet-rise",
+    "name": "でんじふゆう",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "zap-cannon",
+    "name": "でんじほう",
+    "type": "electric",
+    "category": "special",
+    "power": 120,
+    "accuracy": 50,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "baneful-bunker",
+    "name": "トーチカ",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "block",
+    "name": "とおせんぼう",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "howl",
+    "name": "とおぼえ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "coil",
+    "name": "とぐろをまく",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "acid-armor",
+    "name": "とける",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "last-resort",
+    "name": "とっておき",
+    "type": "normal",
+    "category": "physical",
+    "power": 140,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "fell-stinger",
+    "name": "とどめばり",
+    "type": "bug",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "lunge",
+    "name": "とびかかる",
+    "type": "bug",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "pounce",
+    "name": "とびつく",
+    "type": "bug",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bounce",
+    "name": "とびはねる",
+    "type": "flying",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 85,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "high-jump-kick",
+    "name": "とびひざげり",
+    "type": "fighting",
+    "category": "physical",
+    "power": 130,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "circle-throw",
+    "name": "ともえなげ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "tri-attack",
+    "name": "トライアタック",
+    "type": "normal",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "snap-trap",
+    "name": "トラバサミ",
+    "type": "steel",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "trick",
+    "name": "トリック",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flower-trick",
+    "name": "トリックフラワー",
+    "type": "grass",
+    "category": "physical",
+    "power": 70,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "trick-room",
+    "name": "トリックルーム",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "triple-axel",
+    "name": "トリプルアクセル",
+    "type": "ice",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "trop-kick",
+    "name": "トロピカルキック",
+    "type": "grass",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "u-turn",
+    "name": "とんぼがえり",
+    "type": "bug",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "poison-jab",
+    "name": "どくづき",
+    "type": "poison",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "toxic",
+    "name": "どくどく",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "poison-fang",
+    "name": "どくどくのキバ",
+    "type": "poison",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "toxic-thread",
+    "name": "どくのいと",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "poison-powder",
+    "name": "どくのこな",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 75,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "barb-barrage",
+    "name": "どくばりセンボン",
+    "type": "poison",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "toxic-spikes",
+    "name": "どくびし",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "kowtow-cleave",
+    "name": "ドゲザン",
+    "type": "dark",
+    "category": "physical",
+    "power": 85,
+    "accuracy": null,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-darts",
+    "name": "ドラゴンアロー",
+    "type": "dragon",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-cheer",
+    "name": "ドラゴンエール",
+    "type": "dragon",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-claw",
+    "name": "ドラゴンクロー",
+    "type": "dragon",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-rush",
+    "name": "ドラゴンダイブ",
+    "type": "dragon",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 75,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-tail",
+    "name": "ドラゴンテール",
+    "type": "dragon",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "drum-beating",
+    "name": "ドラムアタック",
+    "type": "grass",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "drill-peck",
+    "name": "ドリルくちばし",
+    "type": "flying",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "drill-run",
+    "name": "ドリルライナー",
+    "type": "ground",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "draining-kiss",
+    "name": "ドレインキッス",
+    "type": "fairy",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "drain-punch",
+    "name": "ドレインパンチ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "mud-slap",
+    "name": "どろかけ",
+    "type": "ground",
+    "category": "special",
+    "power": 20,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "thief",
+    "name": "どろぼう",
+    "type": "dark",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "amnesia",
+    "name": "ドわすれ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "night-daze",
+    "name": "ナイトバースト",
+    "type": "dark",
+    "category": "special",
+    "power": 90,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "night-shade",
+    "name": "ナイトヘッド",
+    "type": "ghost",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "entrainment",
+    "name": "なかまづくり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fling",
+    "name": "なげつける",
+    "type": "dark",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "slack-off",
+    "name": "なまける",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "tearful-look",
+    "name": "なみだめ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "surf",
+    "name": "なみのり",
+    "type": "water",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "worry-seed",
+    "name": "なやみのタネ",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "role-play",
+    "name": "なりきり",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "spiky-shield",
+    "name": "ニードルガード",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flame-charge",
+    "name": "ニトロチャージ",
+    "type": "fire",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "sunny-day",
+    "name": "にほんばれ",
+    "type": "fire",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "wish",
+    "name": "ねがいごと",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fake-out",
+    "name": "ねこだまし",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "sleep-talk",
+    "name": "ねごと",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "population-bomb",
+    "name": "ネズミざん",
+    "type": "normal",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "scorching-sands",
+    "name": "ねっさのだいち",
+    "type": "ground",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "scald",
+    "name": "ねっとう",
+    "type": "water",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "heat-wave",
+    "name": "ねっぷう",
+    "type": "fire",
+    "category": "special",
+    "power": 95,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "sticky-web",
+    "name": "ねばねばネット",
+    "type": "bug",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sleep-powder",
+    "name": "ねむりごな",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 75,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rest",
+    "name": "ねむる",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "snipe-shot",
+    "name": "ねらいうち",
+    "type": "water",
+    "category": "special",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "ingrain",
+    "name": "ねをはる",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "body-slam",
+    "name": "のしかかり",
+    "type": "normal",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "swallow",
+    "name": "のみこむ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "curse",
+    "name": "のろい",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "frenzy-plant",
+    "name": "ハードプラント",
+    "type": "grass",
+    "category": "special",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hard-press",
+    "name": "ハードプレス",
+    "type": "steel",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "no-retreat",
+    "name": "はいすいのじん",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hydro-cannon",
+    "name": "ハイドロカノン",
+    "type": "water",
+    "category": "special",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hydro-pump",
+    "name": "ハイドロポンプ",
+    "type": "water",
+    "category": "special",
+    "power": 110,
+    "accuracy": 80,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hyper-voice",
+    "name": "ハイパーボイス",
+    "type": "normal",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "skitter-smack",
+    "name": "はいよるいちげき",
+    "type": "bug",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "hyper-beam",
+    "name": "はかいこうせん",
+    "type": "normal",
+    "category": "special",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "steel-wing",
+    "name": "はがねのつばさ",
+    "type": "steel",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "spit-up",
+    "name": "はきだす",
+    "type": "normal",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "guillotine",
+    "name": "ハサミギロチン",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 30,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "knock-off",
+    "name": "はたきおとす",
+    "type": "dark",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "pound",
+    "name": "はたく",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "aura-sphere",
+    "name": "はどうだん",
+    "type": "fighting",
+    "category": "special",
+    "power": 80,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "petal-dance",
+    "name": "はなびらのまい",
+    "type": "grass",
+    "category": "special",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "petal-blizzard",
+    "name": "はなふぶき",
+    "type": "grass",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "roost",
+    "name": "はねやすめ",
+    "type": "flying",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "spicy-extract",
+    "name": "ハバネロエキス",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "light-of-ruin",
+    "name": "はめつのひかり",
+    "type": "fairy",
+    "category": "special",
+    "power": 140,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "upper-hand",
+    "name": "はやてがえし",
+    "type": "fighting",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "belly-drum",
+    "name": "はらだいこ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "trick-or-treat",
+    "name": "ハロウィン",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "snarl",
+    "name": "バークアウト",
+    "type": "dark",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "superpower",
+    "name": "ばかぢから",
     "type": "fighting",
     "category": "physical",
     "power": 120,
     "accuracy": 100,
     "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "boomburst",
+    "name": "ばくおんぱ",
+    "type": "normal",
+    "category": "special",
+    "power": 140,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "dynamic-punch",
+    "name": "ばくれつパンチ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 50,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "baton-pass",
+    "name": "バトンタッチ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "psyshield-bash",
+    "name": "バリアーラッシュ",
+    "type": "psychic",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bullet-punch",
+    "name": "バレットパンチ",
+    "type": "steel",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "parabolic-charge",
+    "name": "パラボラチャージ",
+    "type": "electric",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "power-whip",
+    "name": "パワーウィップ",
+    "type": "grass",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 85,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "power-split",
+    "name": "パワーシェア",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "power-gem",
+    "name": "パワージェム",
+    "type": "rock",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "power-swap",
+    "name": "パワースワップ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "power-trick",
+    "name": "パワートリック",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "heat-crash",
+    "name": "ヒートスタンプ",
+    "type": "fire",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "light-screen",
+    "name": "ひかりのかべ",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "ceaseless-edge",
+    "name": "ひけん・ちえなみ",
+    "type": "dark",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "topsy-turvy",
+    "name": "ひっくりかえす",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "infernal-parade",
+    "name": "ひゃっきやこう",
+    "type": "ghost",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "chilling-water",
+    "name": "ひやみず",
+    "type": "water",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mountain-gale",
+    "name": "ひょうざんおろし",
+    "type": "ice",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "zing-zap",
+    "name": "びりびりちくちく",
+    "type": "electric",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bulk-up",
+    "name": "ビルドアップ",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "quick-guard",
+    "name": "ファストガード",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "sucker-punch",
+    "name": "ふいうち",
+    "type": "dark",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "imprison",
+    "name": "ふういん",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fairy-lock",
+    "name": "フェアリーロック",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dire-claw",
+    "name": "フェイタルクロー",
+    "type": "poison",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "feint",
+    "name": "フェイント",
+    "type": "normal",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "feather-dance",
+    "name": "フェザーダンス",
+    "type": "flying",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "whirlwind",
+    "name": "ふきとばし",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "beat-up",
+    "name": "ふくろだたき",
+    "type": "dark",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "corrosive-gas",
+    "name": "ふしょくガス",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "blizzard",
+    "name": "ふぶき",
+    "type": "ice",
+    "category": "special",
+    "power": 110,
+    "accuracy": 70,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "flying-press",
+    "name": "フライングプレス",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "teeter-dance",
+    "name": "フラフラダンス",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "freeze-dry",
+    "name": "フリーズドライ",
+    "type": "ice",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "torch-song",
+    "name": "フレアソング",
+    "type": "fire",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flare-blitz",
+    "name": "フレアドライブ",
+    "type": "fire",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "lava-plume",
+    "name": "ふんえん",
+    "type": "fire",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "eruption",
+    "name": "ふんか",
+    "type": "fire",
+    "category": "special",
+    "power": 150,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "rage-fist",
+    "name": "ふんどのこぶし",
+    "type": "ghost",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "eerie-spell",
+    "name": "ぶきみなじゅもん",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "headlong-rush",
+    "name": "ぶちかまし",
+    "type": "ground",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "blast-burn",
+    "name": "ブラストバーン",
+    "type": "fire",
+    "category": "special",
+    "power": 150,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "crush-claw",
+    "name": "ブレイククロー",
+    "type": "normal",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "blaze-kick",
+    "name": "ブレイズキック",
+    "type": "fire",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "brave-bird",
+    "name": "ブレイブバード",
+    "type": "flying",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "brutal-swing",
+    "name": "ぶんまわす",
+    "type": "dark",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": true
+  },
+  {
+    "id": "sludge-wave",
+    "name": "ヘドロウェーブ",
+    "type": "poison",
+    "category": "special",
+    "power": 95,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "sludge-bomb",
+    "name": "ヘドロばくだん",
+    "type": "poison",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "heavy-slam",
+    "name": "ヘビーボンバー",
+    "type": "steel",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "glare",
+    "name": "へびにらみ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "transform",
+    "name": "へんしん",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "venoshock",
+    "name": "ベノムショック",
+    "type": "poison",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "discharge",
+    "name": "ほうでん",
+    "type": "electric",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "comeuppance",
+    "name": "ほうふく",
+    "type": "dark",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "roar",
+    "name": "ほえる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "stuff-cheeks",
+    "name": "ほおばる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "covet",
+    "name": "ほしがる",
+    "type": "normal",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "nuzzle",
+    "name": "ほっぺすりすり",
+    "type": "electric",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "fire-spin",
+    "name": "ほのおのうず",
+    "type": "fire",
+    "category": "special",
+    "power": 35,
+    "accuracy": 85,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fire-fang",
+    "name": "ほのおのキバ",
+    "type": "fire",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "fire-punch",
+    "name": "ほのおのパンチ",
+    "type": "fire",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "fiery-dance",
+    "name": "ほのおのまい",
+    "type": "fire",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "fire-lash",
+    "name": "ほのおのムチ",
+    "type": "fire",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "perish-song",
+    "name": "ほろびのうた",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "bone-rush",
+    "name": "ボーンラッシュ",
+    "type": "ground",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "hurricane",
+    "name": "ぼうふう",
+    "type": "flying",
+    "category": "special",
+    "power": 110,
+    "accuracy": 70,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "body-press",
+    "name": "ボディプレス",
+    "type": "fighting",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "volt-tackle",
+    "name": "ボルテッカー",
+    "type": "electric",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "volt-switch",
+    "name": "ボルトチェンジ",
+    "type": "electric",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "poltergeist",
+    "name": "ポルターガイスト",
+    "type": "ghost",
+    "category": "physical",
+    "power": 110,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "wrap",
+    "name": "まきつく",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 90,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "spikes",
+    "name": "まきびし",
+    "type": "ground",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dazzling-gleam",
+    "name": "マジカルシャイン",
+    "type": "fairy",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "mystical-fire",
+    "name": "マジカルフレイム",
+    "type": "fire",
+    "category": "special",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "magic-room",
+    "name": "マジックルーム",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mud-shot",
+    "name": "マッドショット",
+    "type": "ground",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mach-punch",
+    "name": "マッハパンチ",
+    "type": "fighting",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "infestation",
+    "name": "まとわりつく",
+    "type": "bug",
+    "category": "special",
+    "power": 20,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "copycat",
+    "name": "まねっこ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "magic-powder",
+    "name": "まほうのこな",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "protect",
+    "name": "まもる",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "substitute",
+    "name": "みがわり",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "detect",
+    "name": "みきり",
+    "type": "fighting",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "pin-missile",
+    "name": "ミサイルばり",
+    "type": "bug",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 95,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "misty-explosion",
+    "name": "ミストバースト",
+    "type": "fairy",
+    "category": "special",
+    "power": 100,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "misty-terrain",
+    "name": "ミストフィールド",
+    "type": "fairy",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "syrup-bomb",
+    "name": "みずあめボム",
+    "type": "grass",
+    "category": "special",
+    "power": 60,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "water-shuriken",
+    "name": "みずしゅりけん",
+    "type": "water",
+    "category": "special",
+    "power": 15,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "water-pulse",
+    "name": "みずのはどう",
+    "type": "water",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "soak",
+    "name": "みずびたし",
+    "type": "water",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "destiny-bond",
+    "name": "みちづれ",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mirror-coat",
+    "name": "ミラーコート",
+    "type": "psychic",
+    "category": "special",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "reflect-type",
+    "name": "ミラータイプ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "future-sight",
+    "name": "みらいよち",
+    "type": "psychic",
+    "category": "special",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "milk-drink",
+    "name": "ミルクのみ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "alluring-voice",
+    "name": "みわくのボイス",
+    "type": "fairy",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "moonblast",
+    "name": "ムーンフォース",
+    "type": "fairy",
+    "category": "special",
+    "power": 95,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "bug-bite",
+    "name": "むしくい",
+    "type": "bug",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "bug-buzz",
+    "name": "むしのさざめき",
+    "type": "bug",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "struggle-bug",
+    "name": "むしのていこう",
+    "type": "bug",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "bitter-blade",
+    "name": "むねんのつるぎ",
+    "type": "fire",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "calm-mind",
+    "name": "めいそう",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "mega-kick",
+    "name": "メガトンキック",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 75,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "megahorn",
+    "name": "メガホーン",
+    "type": "bug",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 85,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "metal-burst",
+    "name": "メタルバースト",
+    "type": "steel",
+    "category": "physical",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "meteor-beam",
+    "name": "メテオビーム",
+    "type": "rock",
+    "category": "special",
+    "power": 120,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "attract",
+    "name": "メロメロ",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "burn-up",
+    "name": "もえつきる",
+    "type": "fire",
+    "category": "special",
+    "power": 130,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "forests-curse",
+    "name": "もりののろい",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "head-smash",
+    "name": "もろはのずつき",
+    "type": "rock",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 80,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "temper-flare",
+    "name": "やけっぱち",
+    "type": "fire",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "leech-seed",
+    "name": "やどりぎのタネ",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "storm-throw",
+    "name": "やまあらし",
+    "type": "fighting",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "snowscape",
+    "name": "ゆきげしき",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "avalanche",
+    "name": "ゆきなだれ",
+    "type": "ice",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "rising-voltage",
+    "name": "ライジングボルト",
+    "type": "electric",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flash-cannon",
+    "name": "ラスターカノン",
+    "type": "steel",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "leaf-storm",
+    "name": "リーフストーム",
+    "type": "grass",
+    "category": "special",
+    "power": 130,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "leaf-blade",
+    "name": "リーフブレード",
+    "type": "grass",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "recycle",
+    "name": "リサイクル",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "reflect",
+    "name": "リフレクター",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "draco-meteor",
+    "name": "りゅうせいぐん",
+    "type": "dragon",
+    "category": "special",
+    "power": 130,
+    "accuracy": 90,
+    "isContact": false,
     "isSpread": false
   },
   {
@@ -116,6 +4916,206 @@
     "category": "special",
     "power": 85,
     "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-dance",
+    "name": "りゅうのまい",
+    "type": "dragon",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "apple-acid",
+    "name": "りんごさん",
+    "type": "grass",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "round",
+    "name": "りんしょう",
+    "type": "normal",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "lumina-crash",
+    "name": "ルミナコリジョン",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "raging-bull",
+    "name": "レイジングブル",
+    "type": "normal",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "ice-punch",
+    "name": "れいとうパンチ",
+    "type": "ice",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "ice-beam",
+    "name": "れいとうビーム",
+    "type": "ice",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "inferno",
+    "name": "れんごく",
+    "type": "fire",
+    "category": "special",
+    "power": 100,
+    "accuracy": 50,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "low-sweep",
+    "name": "ローキック",
+    "type": "fighting",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "lock-on",
+    "name": "ロックオン",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rock-polish",
+    "name": "ロックカット",
+    "type": "rock",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "rock-blast",
+    "name": "ロックブラスト",
+    "type": "rock",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 90,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "wide-guard",
+    "name": "ワイドガード",
+    "type": "rock",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "expanding-force",
+    "name": "ワイドフォース",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "breaking-swipe",
+    "name": "ワイドブレイカー",
+    "type": "dragon",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": true
+  },
+  {
+    "id": "wild-charge",
+    "name": "ワイルドボルト",
+    "type": "electric",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "cotton-spore",
+    "name": "わたほうし",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "struggle",
+    "name": "わるあがき",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": null,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "nasty-plot",
+    "name": "わるだくみ",
+    "type": "dark",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "wonder-room",
+    "name": "ワンダールーム",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
     "isContact": false,
     "isSpread": false
   }
