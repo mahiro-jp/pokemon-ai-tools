@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#e53e3e">
+    <meta name="description" content="ポケモンの個体管理、ダメージ計算、AI調整提案を行うアプリです。">
+    <title>ポケモン育成・ダメージ計算</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <h1 class="app-title">ポケモン育成ツール</h1>
+        <button
+          class="button button-secondary settings-button"
+          id="api-settings-button"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="api-settings-dialog"
+        >
+          <span aria-hidden="true">⚙</span>
+          <span>API設定</span>
+          <span class="settings-badge" id="api-key-badge" hidden>未設定</span>
+        </button>
+      </header>
+
+      <nav class="tab-navigation" aria-label="メインメニュー" role="tablist">
+        <button
+          class="tab-button is-active"
+          id="tab-button-manager"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-manager"
+          data-tab-target="tab-manager"
+        >個体管理</button>
+        <button
+          class="tab-button"
+          id="tab-button-damage"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-damage"
+          data-tab-target="tab-damage"
+          tabindex="-1"
+        >ダメージ計算</button>
+        <button
+          class="tab-button"
+          id="tab-button-advisor"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-advisor"
+          data-tab-target="tab-advisor"
+          tabindex="-1"
+        >AI調整提案</button>
+      </nav>
+
+      <p class="app-status" id="app-status" role="status" aria-live="polite" hidden></p>
+
+      <main class="main-content">
+        <section
+          class="tab-panel"
+          id="tab-manager"
+          role="tabpanel"
+          aria-labelledby="tab-button-manager"
+          tabindex="0"
+        >
+          <div class="panel-heading">
+            <h2>個体管理</h2>
+            <p>育成個体の登録・編集を行います。</p>
+          </div>
+          <div class="ui-mount-point" id="manager-ui-root" data-ui-mount="manager">
+            <p class="placeholder-text">個体管理画面を準備しています。</p>
+          </div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="tab-damage"
+          role="tabpanel"
+          aria-labelledby="tab-button-damage"
+          tabindex="0"
+          hidden
+        >
+          <div class="panel-heading">
+            <h2>ダメージ計算</h2>
+            <p>攻撃側・防御側と技を選択してダメージを計算します。</p>
+          </div>
+          <div class="ui-mount-point" id="damage-ui-root" data-ui-mount="damage">
+            <p class="placeholder-text">ダメージ計算画面を準備しています。</p>
+          </div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="tab-advisor"
+          role="tabpanel"
+          aria-labelledby="tab-button-advisor"
+          tabindex="0"
+          hidden
+        >
+          <div class="panel-heading">
+            <h2>AI調整提案</h2>
+            <p>育成の希望をもとに調整案を提案します。</p>
+          </div>
+          <div class="ui-mount-point" id="advisor-ui-root" data-ui-mount="advisor">
+            <p class="placeholder-text">AI調整提案画面を準備しています。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="settings-dialog" id="api-settings-dialog" aria-labelledby="api-settings-title">
+      <form class="settings-form" id="api-settings-form">
+        <div class="dialog-heading">
+          <h2 id="api-settings-title">Gemini API設定</h2>
+          <button
+            class="icon-button"
+            id="api-settings-close"
+            type="button"
+            aria-label="設定を閉じる"
+          >×</button>
+        </div>
+        <label class="form-field" for="gemini-api-key">
+          <span>Gemini APIキー</span>
+          <input
+            id="gemini-api-key"
+            name="apiKey"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="APIキーを入力"
+          >
+        </label>
+        <label class="form-field" for="gemini-model">
+          <span>使用モデル</span>
+          <select id="gemini-model" name="model">
+            <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+            <option value="gemini-2.5-pro">Gemini 2.5 Pro</option>
+            <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+          </select>
+        </label>
+        <p class="form-message" id="api-settings-message" role="status" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" id="api-settings-cancel" type="button">閉じる</button>
+          <button class="button button-primary" type="submit">保存する</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

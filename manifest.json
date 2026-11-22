@@ -1,0 +1,10 @@
+{
+  "name": "ポケモン育成・ダメージ計算",
+  "short_name": "ポケモン育成",
+  "description": "ポケモンの個体管理、ダメージ計算、AI調整提案を行うアプリです。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#e53e3e",
+  "background_color": "#f7fafc"
+}
