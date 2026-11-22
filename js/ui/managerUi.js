@@ -404,6 +404,8 @@ export function initManagerUi(masterData, onBuildsChanged) {
     }
   }
 
+  document.addEventListener("pokemon-builds-changed", refreshBuildList);
+
   /**
    * フォームを指定個体の内容で埋める。
    * @param {PokemonBuild | null} build 編集する個体。新規作成時はnull。

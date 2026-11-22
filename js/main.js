@@ -10,6 +10,7 @@ import {
   refreshDamageSavedBuilds,
   setPokemonToSide
 } from "./ui/damageUi.js";
+import { initAdvisorUi } from "./ui/advisorUi.js";
 
 /**
  * アプリ内で共有するマスターデータ。
@@ -211,9 +212,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   const errors = await loadMasterData();
   showMasterDataErrors(errors);
   initManagerUi(masterData, () => {
-    refreshDamageSavedBuilds();
+    document.dispatchEvent(new Event("pokemon-builds-changed"));
   });
   initDamageUi(masterData);
+  initAdvisorUi(masterData, {
+    onBuildsChanged: () => {
+      document.dispatchEvent(new Event("pokemon-builds-changed"));
+    },
+    onSendToDamage: (side, build) => {
+      setPokemonToSide(side, build);
+      activateTab("tab-damage");
+    }
+  });
 
   /**
    * 個体管理UIから送られる個体セット要求を処理する。
