@@ -838,15 +838,5 @@ export function initDamageUi(data) {
   root.querySelector("#damage-double")?.addEventListener("change", calculateAndRender);
   root.querySelector("#damage-weather")?.addEventListener("change", calculateAndRender);
 
-  document.addEventListener("pokemon-build-selected", (event) => {
-    if (!(event instanceof CustomEvent)) return;
-    const side = event.detail?.side;
-    const build = event.detail?.build;
-    if ((side === "attacker" || side === "defender") && build) {
-      setPokemonToSide(side, build);
-    }
-  });
-  document.addEventListener("pokemon-builds-changed", refreshDamageSavedBuilds);
-
   calculateAndRender();
 }

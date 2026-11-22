@@ -548,6 +548,19 @@ select:focus-visible {
   .manager-section-heading {
     flex-direction: column;
   }
+
+  .damage-rolls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .damage-stats-table th,
+  .damage-stats-table td {
+    padding-inline: 3px;
+  }
+
+  .damage-stats-table input {
+    width: 62px;
+  }
 }
 
 .damage-layout {

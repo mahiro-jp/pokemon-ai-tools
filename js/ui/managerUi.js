@@ -561,10 +561,10 @@ export function initManagerUi(masterData, onBuildsChanged) {
       }
     } else if (action === "set-attacker" && build) {
       document.dispatchEvent(new CustomEvent("pokemon-build-selected", { detail: { build, side: "attacker" } }));
-      setMessage("選択した個体をダメージ計算の攻撃側にセットするイベントを送信しました。");
+      setMessage("選択した個体をダメージ計算の攻撃側にセットしました。");
     } else if (action === "set-defender" && build) {
       document.dispatchEvent(new CustomEvent("pokemon-build-selected", { detail: { build, side: "defender" } }));
-      setMessage("選択した個体をダメージ計算の防御側にセットするイベントを送信しました。");
+      setMessage("選択した個体をダメージ計算の防御側にセットしました。");
     } else if (action === "export") {
       exportFile();
     } else if (action === "import") {

@@ -5,7 +5,11 @@ import {
   saveGeminiModel
 } from "./storage.js";
 import { initManagerUi } from "./ui/managerUi.js";
-import { initDamageUi } from "./ui/damageUi.js";
+import {
+  initDamageUi,
+  refreshDamageSavedBuilds,
+  setPokemonToSide
+} from "./ui/damageUi.js";
 
 /**
  * アプリ内で共有するマスターデータ。
@@ -207,7 +211,33 @@ document.addEventListener("DOMContentLoaded", async () => {
   const errors = await loadMasterData();
   showMasterDataErrors(errors);
   initManagerUi(masterData, () => {
-    document.dispatchEvent(new CustomEvent("pokemon-builds-changed"));
+    refreshDamageSavedBuilds();
   });
   initDamageUi(masterData);
+
+  /**
+   * 個体管理UIから送られる個体セット要求を処理する。
+   * @param {Event} event 個体セットイベント。
+   * @returns {void}
+   */
+  function handlePokemonBuildSelected(event) {
+    if (!(event instanceof CustomEvent)) return;
+    const side = event.detail?.side;
+    const build = event.detail?.build;
+    if ((side !== "attacker" && side !== "defender") || !build) return;
+
+    setPokemonToSide(side, build);
+    activateTab("tab-damage");
+  }
+
+  /**
+   * 個体一覧の更新時にダメージ計算UIの保存個体リストを同期する。
+   * @returns {void}
+   */
+  function handlePokemonBuildsChanged() {
+    refreshDamageSavedBuilds();
+  }
+
+  document.addEventListener("pokemon-build-selected", handlePokemonBuildSelected);
+  document.addEventListener("pokemon-builds-changed", handlePokemonBuildsChanged);
 });
