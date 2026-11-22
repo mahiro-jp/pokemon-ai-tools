@@ -3,7 +3,7 @@
     "id": "garchomp",
     "name": "ガブリアス",
     "types": ["dragon", "ground"],
-    "abilities": ["さめはだ", "すながくれ", "あらくれもの"],
+    "abilities": ["さめはだ", "すながくれ"],
     "baseStats": {
       "hp": 108,
       "atk": 130,
@@ -16,7 +16,7 @@
       {
         "name": "メガガブリアス",
         "types": ["dragon", "ground"],
-        "ability": "さめはだ",
+        "ability": "すなのちから",
         "baseStats": {
           "hp": 108,
           "atk": 170,
@@ -32,7 +32,7 @@
     "id": "charizard",
     "name": "リザードン",
     "types": ["fire", "flying"],
-    "abilities": ["もうか", "日照り", "サンパワー"],
+    "abilities": ["もうか", "サンパワー"],
     "baseStats": {
       "hp": 78,
       "atk": 84,
@@ -58,7 +58,7 @@
       {
         "name": "メガリザードンY",
         "types": ["fire", "flying"],
-        "ability": "日照り",
+        "ability": "ひでり",
         "baseStats": {
           "hp": 78,
           "atk": 104,
@@ -89,7 +89,7 @@
     "id": "flutter-mane",
     "name": "ハバタクカミ",
     "types": ["ghost", "fairy"],
-    "abilities": ["おもかげ"],
+    "abilities": ["こだいかっせい"],
     "baseStats": {
       "hp": 55,
       "atk": 55,
