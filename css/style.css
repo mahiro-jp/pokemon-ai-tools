@@ -1085,6 +1085,24 @@ select:focus-visible {
   text-align: right;
 }
 
+.damage-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 0 12px;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.damage-modifiers span {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: var(--color-text);
+  background: #f7fafc;
+}
+
 .damage-rolls {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));

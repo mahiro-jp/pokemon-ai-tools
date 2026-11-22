@@ -11,7 +11,7 @@ import { createSearchableInput } from "./searchableSelect.js";
  * @typedef {{ id?: string, name: string, types?: string[], abilities?: string[], baseStats?: Partial<Record<StatName, number>>, megaForms?: MegaForm[] }} Species 種族マスターデータ。
  * @typedef {{ name: string, types?: string[], ability?: string, baseStats?: Partial<Record<StatName, number>> }} MegaForm メガフォルムのマスターデータ。
  * @typedef {{ name: string, up?: StatName | null, down?: StatName | null }} Nature 性格マスターデータ。
- * @typedef {{ name: string, type?: string, category?: string, power?: number, isSpread?: boolean }} Move 技マスターデータ。
+ * @typedef {{ name: string, type?: string, category?: string, power?: number, isSpread?: boolean, isContact?: boolean }} Move 技マスターデータ。
  * @typedef {{ name: string }} Item 持ち物マスターデータ。
  * @typedef {{ id: string, speciesId?: string, name?: string, memo?: string, level?: number, nature?: string, ability?: string, item?: string, megaForm?: string, points?: Partial<Record<StatName, number>>, moves?: string[], updatedAt?: string }} PokemonBuild 保存済み育成個体データ。
  * @typedef {{ pokemon?: Species[], natures?: Nature[], items?: Item[], moves?: Move[] }} DamageMasterData ダメージ画面で使用するマスターデータ。
@@ -529,6 +529,9 @@ function calculateAndRender() {
       <div class="damage-hp-remaining" style="width:${Math.max(0, Math.min(100, remainingPercent))}%"></div>
     </div>
     <p class="damage-hp-text">残りHP目安: ${remainingMin} ～ ${remainingMax} / ${defenderStats.hp}</p>
+    ${result.appliedModifiers.length > 0
+      ? `<p class="damage-modifiers">補正: ${result.appliedModifiers.map((modifier) => `<span>${escapeHtml(modifier)}</span>`).join("")}</p>`
+      : ""}
     <div class="damage-rolls" aria-label="16段階のダメージ乱数">
       ${result.rolls.map((damage, index) => `
         <span title="${85 + index}%乱数"><strong>${damage}</strong><small>${85 + index}%</small></span>
