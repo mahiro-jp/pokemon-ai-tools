@@ -3,56 +3,602 @@
     "id": "mega-stone",
     "name": "メガストーン",
     "effectType": "mega_stone",
-    "multiplier": 1.0,
+    "multiplier": 1,
     "description": "メガシンカ可能なポケモンをメガシンカさせる"
   },
   {
-    "id": "choice-atk",
-    "name": "こだわりハチマキ",
-    "effectType": "choice_atk",
-    "multiplier": 1.5,
-    "description": "攻撃を1.5倍にするが、同じ技しか使えなくなる"
-  },
-  {
-    "id": "choice-spa",
-    "name": "こだわりメガネ",
-    "effectType": "choice_spa",
-    "multiplier": 1.5,
-    "description": "特攻を1.5倍にするが、同じ技しか使えなくなる"
-  },
-  {
-    "id": "choice-spe",
-    "name": "こだわりスカーフ",
-    "effectType": "choice_spe",
-    "multiplier": 1.5,
-    "description": "素早さを1.5倍にするが、同じ技しか使えなくなる"
+    "id": "heat-rock",
+    "name": "あついいわ",
+    "effectType": "heat_rock",
+    "multiplier": 1,
+    "description": "持たせると、技にほんばれと特性ひでりの効果が8ターン持続するようになる。"
   },
   {
     "id": "life-orb",
     "name": "いのちのたま",
     "effectType": "life_orb",
     "multiplier": 1.3,
-    "description": "攻撃技の威力を1.3倍にする代わりに、毎ターンHPを失う"
+    "description": "持たせると、技の威力が1.3倍になる。ただし、攻撃後に自分のHPが最大HPの1/10だけ減る。"
   },
   {
-    "id": "assault-vest",
-    "name": "とつげきチョッキ",
-    "effectType": "assault_vest",
-    "multiplier": 1.0,
-    "description": "特防を1.5倍にするが、変化技が使えなくなる"
+    "id": "electric-seed",
+    "name": "エレキシード",
+    "effectType": "electric_seed",
+    "multiplier": 1,
+    "description": "持たせると、エレキフィールドの時に『ぼうぎょ』ランクが1段階上がる。"
+  },
+  {
+    "id": "kings-rock",
+    "name": "おうじゃのしるし",
+    "effectType": "kings_rock",
+    "multiplier": 1,
+    "description": "持たせると、攻撃技を使用した時に10%で相手がひるむ効果が追加される(追加効果がある技にも効果が追加される)。"
+  },
+  {
+    "id": "big-root",
+    "name": "おおきなねっこ",
+    "effectType": "big_root",
+    "multiplier": 1.3,
+    "description": "持たせると、技アクアリング、ウッドホーン、ギガドレイン、きゅうけつ、すいとる、ちからをすいとる、デスウイング、ドレインキッス、ドレインパンチ、ねをはる、パラボラチャージ、メガドレイン、やどりぎのタネ、ゆめくいの回復量が1.3倍になる。なお、相手が特性ヘドロえきの場合は自分へのダメージ量が1.3倍になる。"
+  },
+  {
+    "id": "shell-bell",
+    "name": "かいがらのすず",
+    "effectType": "shell_bell",
+    "multiplier": 1,
+    "description": "持たせると、技で相手に与えたダメージの1/8だけHPが回復する。"
+  },
+  {
+    "id": "hard-stone",
+    "name": "かたいいし",
+    "effectType": "hard_stone",
+    "multiplier": 1.2,
+    "description": "持たせると、いわタイプの技の威力が1.2倍になる。"
   },
   {
     "id": "focus-sash",
     "name": "きあいのタスキ",
     "effectType": "focus_sash",
-    "multiplier": 1.0,
-    "description": "HPが満タンのとき、攻撃技で一撃で倒されてもHPを1だけ残す"
+    "multiplier": 1,
+    "description": "持たせると、HPが最大の時、『ひんし』状態になるダメージや一撃必殺の技を受けても必ず1残る。ただし、1度使用するとなくなる。"
   },
   {
-    "id": "none",
-    "name": "なし",
-    "effectType": "none",
-    "multiplier": 1.0,
-    "description": "持ち物なし"
+    "id": "focus-band",
+    "name": "きあいのハチマキ",
+    "effectType": "focus_band",
+    "multiplier": 1,
+    "description": "持たせると、『ひんし』になるダメージを受けても10%の確率でHPが1残る。"
+  },
+  {
+    "id": "miracle-seed",
+    "name": "きせきのタネ",
+    "effectType": "miracle_seed",
+    "multiplier": 1.2,
+    "description": "持たせると、くさタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "shed-shell",
+    "name": "きれいなぬけがら",
+    "effectType": "shed_shell",
+    "multiplier": 1,
+    "description": "持たせると、技くろいまなざしなど逃げたり交代できなくなる技や特性ありじごく、かげふみなどの交代を封じる効果を受けず、必ず交代できるようになる。"
+  },
+  {
+    "id": "silver-powder",
+    "name": "ぎんのこな",
+    "effectType": "silver_powder",
+    "multiplier": 1.2,
+    "description": "持たせると、むしタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "iron-ball",
+    "name": "くろいてっきゅう",
+    "effectType": "iron_ball",
+    "multiplier": 1,
+    "description": "持たせると、『すばやさ』が半分になる。また、特性ふゆうやひこうタイプ、でんじふゆう状態のポケモンに持たせると、じめんタイプの技を受けるようになる。"
+  },
+  {
+    "id": "black-glasses",
+    "name": "くろいメガネ",
+    "effectType": "black_glasses",
+    "multiplier": 1.2,
+    "description": "持たせると、あくタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "black-belt",
+    "name": "くろおび",
+    "effectType": "black_belt",
+    "multiplier": 1.2,
+    "description": "持たせると、かくとうタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "grassy-seed",
+    "name": "グラスシード",
+    "effectType": "grassy_seed",
+    "multiplier": 1,
+    "description": "持たせると、グラスフィールドの時に『ぼうぎょ』ランクが1段階上がる。"
+  },
+  {
+    "id": "terrain-extender",
+    "name": "グランドコート",
+    "effectType": "terrain_extender",
+    "multiplier": 1,
+    "description": "持たせると、エレキフィールド、サイコフィールド、グラスフィールド、ミストフィールドの効果が8ターン持続するようになる。"
+  },
+  {
+    "id": "wide-lens",
+    "name": "こうかくレンズ",
+    "effectType": "wide_lens",
+    "multiplier": 1.1,
+    "description": "持たせると、技の命中率が1.1倍になる。"
+  },
+  {
+    "id": "choice-scarf",
+    "name": "こだわりスカーフ",
+    "effectType": "choice_spe",
+    "multiplier": 1.5,
+    "description": "持たせると、同じ技しか出せなくなるが、『すばやさ』が1.5倍になる。ダイマックス中は、すべての効果がない。"
+  },
+  {
+    "id": "rocky-helmet",
+    "name": "ゴツゴツメット",
+    "effectType": "rocky_helmet",
+    "multiplier": 1,
+    "description": "持たせると、直接攻撃を受けた時、相手の最大HPの1/6のダメージを与える。"
+  },
+  {
+    "id": "psychic-seed",
+    "name": "サイコシード",
+    "effectType": "psychic_seed",
+    "multiplier": 1,
+    "description": "持たせると、サイコフィールドの時に『とくぼう』ランクが1段階上がる。"
+  },
+  {
+    "id": "smooth-rock",
+    "name": "さらさらいわ",
+    "effectType": "smooth_rock",
+    "multiplier": 1,
+    "description": "持たせると、技すなあらしと特性すなおこしの効果が8ターン持続するようになる。"
+  },
+  {
+    "id": "damp-rock",
+    "name": "しめったいわ",
+    "effectType": "damp_rock",
+    "multiplier": 1,
+    "description": "持たせると、技あまごいと特性あめふらしの効果が8ターン持続するようになる。"
+  },
+  {
+    "id": "binding-band",
+    "name": "しめつけバンド",
+    "effectType": "binding_band",
+    "multiplier": 1,
+    "description": "持たせると、バインド効果のある束縛技うずしお、からではさむ、サンダープリズン、しめつける、すなじごく、トラバサミ、ほのおのうず、まきつく、マグマストーム、まとわりつくが毎ターン相手に与えるダメージが相手の最大HPの1/6になる。(通常時は1/8)"
+  },
+  {
+    "id": "silk-scarf",
+    "name": "シルクのスカーフ",
+    "effectType": "silk_scarf",
+    "multiplier": 1.2,
+    "description": "持たせると、ノーマルタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "white-herb",
+    "name": "しろいハーブ",
+    "effectType": "white_herb",
+    "multiplier": 1,
+    "description": "持たせると、能力ランクが下がった時にターン終了時に元に戻る。1度使用するとなくなる。"
+  },
+  {
+    "id": "mystic-water",
+    "name": "しんぴのしずく",
+    "effectType": "mystic_water",
+    "multiplier": 1.2,
+    "description": "持たせると、みずタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "magnet",
+    "name": "じしゃく",
+    "effectType": "magnet",
+    "multiplier": 1.2,
+    "description": "持たせると、でんきタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "sharp-beak",
+    "name": "するどいくちばし",
+    "effectType": "sharp_beak",
+    "multiplier": 1.2,
+    "description": "持たせると、ひこうタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "quick-claw",
+    "name": "せんせいのツメ",
+    "effectType": "quick_claw",
+    "multiplier": 1,
+    "description": "持たせると、20%の確率で素早さに関係なく先制できる。"
+  },
+  {
+    "id": "expert-belt",
+    "name": "たつじんのおび",
+    "effectType": "expert_belt",
+    "multiplier": 1.2,
+    "description": "持たせると、効果抜群の技を使った時にダメージが1.2倍になる。"
+  },
+  {
+    "id": "leftovers",
+    "name": "たべのこし",
+    "effectType": "leftovers",
+    "multiplier": 1,
+    "description": "持たせると、毎ターンHPが最大HPの1/16ずつ回復する。"
+  },
+  {
+    "id": "eject-button",
+    "name": "だっしゅつボタン",
+    "effectType": "eject_button",
+    "multiplier": 1,
+    "description": "持たせると、技を受けた時、手持ちポケモンと交代できる。(技を受けた後)"
+  },
+  {
+    "id": "muscle-band",
+    "name": "ちからのハチマキ",
+    "effectType": "muscle_band",
+    "multiplier": 1.1,
+    "description": "持たせると、物理技の威力が1.1倍になる。"
+  },
+  {
+    "id": "icy-rock",
+    "name": "つめたいいわ",
+    "effectType": "icy_rock",
+    "multiplier": 1,
+    "description": "持たせると、技ゆきげしき、さむいギャグと特性ゆきふらしの効果が8ターン持続するようになる。"
+  },
+  {
+    "id": "light-ball",
+    "name": "でんきだま",
+    "effectType": "light_ball",
+    "multiplier": 2,
+    "description": "ピカチュウに持たせると、『こうげき』『とくこう』がそれぞれ2倍になる。また、ピカチュウライチュウに持たせて『タマゴ』を作ると、技ボルテッカーを覚えたピチューが生まれる。"
+  },
+  {
+    "id": "never-melt-ice",
+    "name": "とけないこおり",
+    "effectType": "never_melt_ice",
+    "multiplier": 1.2,
+    "description": "持たせると、こおりタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "poison-barb",
+    "name": "どくバリ",
+    "effectType": "poison_barb",
+    "multiplier": 1.2,
+    "description": "持たせると、どくタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "leek",
+    "name": "ながねぎ",
+    "effectType": "leek",
+    "multiplier": 1,
+    "description": "カモネギカモネギ(ガラル)ネギガナイトに持たせると、急所ランクが2段階上がる。"
+  },
+  {
+    "id": "normal-gem",
+    "name": "ノーマルジュエル",
+    "effectType": "normal_gem",
+    "multiplier": 1.3,
+    "description": "持たせると、ノーマルタイプの技を使った時に威力が1.3倍になる。1度使用するとなくなる。"
+  },
+  {
+    "id": "spell-tag",
+    "name": "のろいのおふだ",
+    "effectType": "spell_tag",
+    "multiplier": 1.2,
+    "description": "持たせると、ゴーストタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "bright-powder",
+    "name": "ひかりのこな",
+    "effectType": "bright_powder",
+    "multiplier": 0.9,
+    "description": "持たせると、相手の技の命中率が0.9倍になる。"
+  },
+  {
+    "id": "light-clay",
+    "name": "ひかりのねんど",
+    "effectType": "light_clay",
+    "multiplier": 1,
+    "description": "持たせると、技ひかりのかべ、リフレクター、オーロラベールの効果が8ターン持続するようになる。"
+  },
+  {
+    "id": "scope-lens",
+    "name": "ピントレンズ",
+    "effectType": "scope_lens",
+    "multiplier": 1,
+    "description": "持たせると、急所ランクが1段階上がる。"
+  },
+  {
+    "id": "air-balloon",
+    "name": "ふうせん",
+    "effectType": "air_balloon",
+    "multiplier": 1,
+    "description": "持たせると、ふゆう状態になりじめんタイプの技が当たらなくなる。ただし、攻撃を受けると効果がなくなる。"
+  },
+  {
+    "id": "zoom-lens",
+    "name": "フォーカスレンズ",
+    "effectType": "zoom_lens",
+    "multiplier": 1.2,
+    "description": "持たせると、後攻のとき技の命中率が1.2倍になる。"
+  },
+  {
+    "id": "twisted-spoon",
+    "name": "まがったスプーン",
+    "effectType": "twisted_spoon",
+    "multiplier": 1.2,
+    "description": "持たせると、エスパータイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "misty-seed",
+    "name": "ミストシード",
+    "effectType": "misty_seed",
+    "multiplier": 1,
+    "description": "持たせると、ミストフィールドの時に『とくぼう』ランクが1段階上がる。"
+  },
+  {
+    "id": "metal-coat",
+    "name": "メタルコート",
+    "effectType": "metal_coat",
+    "multiplier": 1.2,
+    "description": "持たせると、はがねタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "metronome",
+    "name": "メトロノーム",
+    "effectType": "metronome",
+    "multiplier": 2,
+    "description": "持たせると、連続で同じ技を使用する度にダメージが20%ずつ上昇していく(最大2倍)。ただし、違う技を使うと元に戻る。"
+  },
+  {
+    "id": "mental-herb",
+    "name": "メンタルハーブ",
+    "effectType": "mental_herb",
+    "multiplier": 1,
+    "description": "持たせると、アンコール、いちゃもん、かいふくふうじ、ちょうはつ、メロメロ状態になった時に自分で回復する。1度使用するとなくなる。"
+  },
+  {
+    "id": "charcoal",
+    "name": "もくたん",
+    "effectType": "charcoal",
+    "multiplier": 1.2,
+    "description": "持たせると、ほのおタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "wise-glasses",
+    "name": "ものしりメガネ",
+    "effectType": "wise_glasses",
+    "multiplier": 1.1,
+    "description": "持たせると、特殊技の威力が1.1倍になる。"
+  },
+  {
+    "id": "soft-sand",
+    "name": "やわらかいすな",
+    "effectType": "soft_sand",
+    "multiplier": 1.2,
+    "description": "持たせると、じめんタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "fairy-feather",
+    "name": "ようせいのハネ",
+    "effectType": "fairy_feather",
+    "multiplier": 1.2,
+    "description": "持たせると、フェアリータイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "dragon-fang",
+    "name": "りゅうのキバ",
+    "effectType": "dragon_fang",
+    "multiplier": 1.2,
+    "description": "持たせると、ドラゴンタイプの技の威力が1.2倍になる。"
+  },
+  {
+    "id": "red-card",
+    "name": "レッドカード",
+    "effectType": "red_card",
+    "multiplier": 1,
+    "description": "持たせると、相手の攻撃技を受けた時に相手を強制的に交代させる。ただし、持たせたポケモンが相手の技を受けて『ひんし』状態になった場合は発動しない。1度使用するとなくなる。ダイマックスしている相手には無効。"
+  },
+  {
+    "id": "passho-berry",
+    "name": "イトケのみ",
+    "effectType": "passho_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるみずタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "payapa-berry",
+    "name": "ウタンのみ",
+    "effectType": "payapa_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるエスパータイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "occa-berry",
+    "name": "オッカのみ",
+    "effectType": "occa_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるほのおタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "sitrus-berry",
+    "name": "オボンのみ",
+    "effectType": "sitrus_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中にHPが半分以下になった時に自分のHPが最大HPの1/4回復する。"
+  },
+  {
+    "id": "oran-berry",
+    "name": "オレンのみ",
+    "effectType": "oran_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中にHPが半分以下になった時に自分のHPが10回復する。"
+  },
+  {
+    "id": "chesto-berry",
+    "name": "カゴのみ",
+    "effectType": "chesto_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『ねむり』状態になった時に自分で治す。"
+  },
+  {
+    "id": "kasib-berry",
+    "name": "カシブのみ",
+    "effectType": "kasib_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるゴーストタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "persim-berry",
+    "name": "キーのみ",
+    "effectType": "persim_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『こんらん』状態になった時に自分で治す。"
+  },
+  {
+    "id": "cheri-berry",
+    "name": "クラボのみ",
+    "effectType": "cheri_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『まひ』状態になった時に自分で治す。"
+  },
+  {
+    "id": "shuca-berry",
+    "name": "シュカのみ",
+    "effectType": "shuca_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるじめんタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "wacan-berry",
+    "name": "ソクノのみ",
+    "effectType": "wacan_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるでんきタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "tanga-berry",
+    "name": "タンガのみ",
+    "effectType": "tanga_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるむしタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "rawst-berry",
+    "name": "チーゴのみ",
+    "effectType": "rawst_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『やけど』状態になった時に自分で治す。"
+  },
+  {
+    "id": "aspear-berry",
+    "name": "ナナシのみ",
+    "effectType": "aspear_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『こおり』状態になった時に自分で治す。"
+  },
+  {
+    "id": "colbur-berry",
+    "name": "ナモのみ",
+    "effectType": "colbur_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるあくタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "haban-berry",
+    "name": "ハバンのみ",
+    "effectType": "haban_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるドラゴンタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "coba-berry",
+    "name": "バコウのみ",
+    "effectType": "coba_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるひこうタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "leppa-berry",
+    "name": "ヒメリのみ",
+    "effectType": "leppa_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に技のPPが0になった時にその技のPPが10回復する。"
+  },
+  {
+    "id": "kebia-berry",
+    "name": "ビアーのみ",
+    "effectType": "kebia_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるどくタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "chilan-berry",
+    "name": "ホズのみ",
+    "effectType": "chilan_berry",
+    "multiplier": 1,
+    "description": "持たせると、ノーマルタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "pecha-berry",
+    "name": "モモンのみ",
+    "effectType": "pecha_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に『どく』状態になった時に自分で治す。"
+  },
+  {
+    "id": "yache-berry",
+    "name": "ヤチェのみ",
+    "effectType": "yache_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるこおりタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "chople-berry",
+    "name": "ヨプのみ",
+    "effectType": "chople_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるかくとうタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "charti-berry",
+    "name": "ヨロギのみ",
+    "effectType": "charti_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるいわタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "lum-berry",
+    "name": "ラムのみ",
+    "effectType": "lum_berry",
+    "multiplier": 1,
+    "description": "持たせると、戦闘中に状態異常や『こんらん』になった時に自分で治す。"
+  },
+  {
+    "id": "babiri-berry",
+    "name": "リリバのみ",
+    "effectType": "babiri_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるはがねタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "rindo-berry",
+    "name": "リンドのみ",
+    "effectType": "rindo_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるくさタイプの技の受けるダメージが1度だけ半分になる。"
+  },
+  {
+    "id": "roseli-berry",
+    "name": "ロゼルのみ",
+    "effectType": "roseli_berry",
+    "multiplier": 1,
+    "description": "持たせると、「こうかは ばつぐん」となるフェアリータイプの技の受けるダメージが1度だけ半分になる。"
   }
 ]
