@@ -18,7 +18,12 @@
 const BUILDS_KEY = "pk_app_builds_v1";
 const GEMINI_KEY = "pk_app_gemini_key_v1";
 const GEMINI_MODEL_KEY = "pk_app_gemini_model_v1";
-const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash";
+const DEFAULT_GEMINI_MODEL = "gemini-3.8-flash";
+const LEGACY_GEMINI_MODELS = new Set([
+  "gemini-2.0-flash",
+  "gemini-2.5-flash",
+  "gemini-2.5-pro"
+]);
 const COPY_SUFFIX = " (コピー)";
 
 /**
@@ -241,7 +246,11 @@ export function saveApiKey(key) {
  * @returns {string} Geminiモデル名。
  */
 export function getGeminiModel() {
-  return getStorage().getItem(GEMINI_MODEL_KEY) || DEFAULT_GEMINI_MODEL;
+  const savedModel = getStorage().getItem(GEMINI_MODEL_KEY);
+  if (!savedModel || LEGACY_GEMINI_MODELS.has(savedModel)) {
+    return DEFAULT_GEMINI_MODEL;
+  }
+  return savedModel;
 }
 
 /**

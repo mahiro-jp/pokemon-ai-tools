@@ -124,7 +124,7 @@ function openApiSettings() {
   if (Array.from(modelSelect.options).some((option) => option.value === savedModel)) {
     modelSelect.value = savedModel;
   } else {
-    modelSelect.value = "gemini-2.5-flash";
+    modelSelect.value = "gemini-3.8-flash";
   }
   message.textContent = "";
   message.classList.remove("is-error");

@@ -66,7 +66,7 @@ project-root/
 
 - `pk_app_builds_v1`: `PokemonBuild[]`（登録済み育成個体リスト）
 - `pk_app_gemini_key_v1`: `string`（ユーザーが入力したGemini APIキー）
-- `pk_app_gemini_model_v1`: `string`（使用モデル名。既定値: `"gemini-2.5-flash"`）
+- `pk_app_gemini_model_v1`: `string`（使用モデル名。既定値: `"gemini-3.8-flash"`。旧Gemini 2.xモデルが保存されている場合は既定モデルに移行）
 
 ---
 
@@ -122,48 +122,49 @@ project-root/
 ### 4.3 Gemini API 調整提案機能（`geminiApi.js`、`advisorUi.js`）
 - **目的**: ユーザーが自然言語で入力した要望（例：「陽気ガブリアスの地震を最高乱数以外耐えつつ、最速100族抜きにしたい」）に基づき、AIが配分案と調整理由を提案し、ワンクリックで個体データに反映する。
 - **エンドポイント**: `https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent`
-- **Structured Outputs（`response_schema`）**:
+- **Structured Outputs（`responseJsonSchema`）**:
   Gemini API には必ず以下のJSONスキーマを指定し、構造化データを返却させる。
 
 ```json
 {
-  "type": "OBJECT",
+  "type": "object",
   "properties": {
-    "nature": { "type": "STRING", "description": "推奨する性格（日本語名）" },
-    "item": { "type": "STRING", "description": "推奨する持ち物（日本語名）" },
-    "ability": { "type": "STRING", "description": "推奨する特性（日本語名）" },
+    "nature": { "type": "string", "description": "推奨する性格（日本語名）" },
+    "item": { "type": "string", "description": "推奨する持ち物（日本語名）" },
+    "ability": { "type": "string", "description": "推奨する特性（日本語名）" },
+    "megaForm": { "type": "string", "description": "メガシンカ時のフォルム名。通常時は空文字" },
     "points": {
-      "type": "OBJECT",
+      "type": "object",
       "properties": {
-        "hp": { "type": "INTEGER" },
-        "atk": { "type": "INTEGER" },
-        "def": { "type": "INTEGER" },
-        "spa": { "type": "INTEGER" },
-        "spd": { "type": "INTEGER" },
-        "spe": { "type": "INTEGER" }
+        "hp": { "type": "integer" },
+        "atk": { "type": "integer" },
+        "def": { "type": "integer" },
+        "spa": { "type": "integer" },
+        "spd": { "type": "integer" },
+        "spe": { "type": "integer" }
       },
       "required": ["hp", "atk", "def", "spa", "spd", "spe"]
     },
     "moves": {
-      "type": "ARRAY",
-      "items": { "type": "STRING" },
+      "type": "array",
+      "items": { "type": "string" },
       "description": "推奨する技構成（最大4つ）"
     },
     "benchmarks": {
-      "type": "ARRAY",
+      "type": "array",
       "items": {
-        "type": "OBJECT",
+        "type": "object",
         "properties": {
-          "target": { "type": "STRING", "description": "仮想敵と技名（例：陽気ガブリアスのじしん）" },
-          "category": { "type": "STRING", "enum": ["offense", "defense", "speed"] },
-          "summary": { "type": "STRING", "description": "調整ラインの結果（例：確定耐え / 81.2%〜96.0%）" }
+          "target": { "type": "string", "description": "仮想敵と技名（例：陽気ガブリアスのじしん）" },
+          "category": { "type": "string", "enum": ["offense", "defense", "speed"] },
+          "summary": { "type": "string", "description": "調整ラインの結果（例：確定耐え / 81.2%〜96.0%）" }
         },
         "required": ["target", "category", "summary"]
       }
     },
-    "explanation": { "type": "STRING", "description": "調整意図の解説文" }
+    "explanation": { "type": "string", "description": "調整意図の解説文" }
   },
-  "required": ["nature", "points", "benchmarks", "explanation"]
+  "required": ["nature", "item", "ability", "megaForm", "points", "moves", "benchmarks", "explanation"]
 }
 ```
 

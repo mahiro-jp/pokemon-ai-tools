@@ -11,57 +11,56 @@ const API_KEY_REQUIRED_MESSAGE = "右上のAPI設定からGemini APIキーを登
  * @type {Record<string, unknown>}
  */
 export const ADJUSTMENT_RESPONSE_SCHEMA = {
-  type: "OBJECT",
+  type: "object",
   properties: {
     nature: {
-      type: "STRING",
+      type: "string",
       description: "推奨する性格（日本語名）"
     },
     item: {
-      type: "STRING",
+      type: "string",
       description: "推奨する持ち物（日本語名）。メガシンカ時はメガストーン"
     },
     ability: {
-      type: "STRING",
+      type: "string",
       description: "推奨する特性（日本語名）"
     },
     megaForm: {
-      type: "STRING",
-      nullable: true,
-      description: "メガシンカ時のフォルム名。通常時はnull"
+      type: "string",
+      description: "メガシンカ時のフォルム名。通常時は空文字"
     },
     points: {
-      type: "OBJECT",
+      type: "object",
       properties: {
-        hp: { type: "INTEGER" },
-        atk: { type: "INTEGER" },
-        def: { type: "INTEGER" },
-        spa: { type: "INTEGER" },
-        spd: { type: "INTEGER" },
-        spe: { type: "INTEGER" }
+        hp: { type: "integer" },
+        atk: { type: "integer" },
+        def: { type: "integer" },
+        spa: { type: "integer" },
+        spd: { type: "integer" },
+        spe: { type: "integer" }
       },
       required: ["hp", "atk", "def", "spa", "spd", "spe"]
     },
     moves: {
-      type: "ARRAY",
-      items: { type: "STRING" },
+      type: "array",
+      items: { type: "string" },
       description: "推奨する技構成（最大4つ）"
     },
     benchmarks: {
-      type: "ARRAY",
+      type: "array",
       items: {
-        type: "OBJECT",
+        type: "object",
         properties: {
           target: {
-            type: "STRING",
+            type: "string",
             description: "仮想敵と技名"
           },
           category: {
-            type: "STRING",
+            type: "string",
             enum: ["offense", "defense", "speed"]
           },
           summary: {
-            type: "STRING",
+            type: "string",
             description: "調整ラインの結果"
           }
         },
@@ -69,7 +68,7 @@ export const ADJUSTMENT_RESPONSE_SCHEMA = {
       }
     },
     explanation: {
-      type: "STRING",
+      type: "string",
       description: "調整意図の解説文"
     }
   },
@@ -95,7 +94,7 @@ export function buildAdvisorSystemPrompt() {
     "レベルは常に50固定です。能力ポイントはhp、atk、def、spa、spd、speの各ステータスに0〜32の整数で配分し、6ステータスの合計を必ず66以下にしてください。",
     "実数値の計算は次の式を基準にしてください。HPは「floor((種族値*2+31)*0.5)+60+ポイント」、HP以外は「floor((floor((種族値*2+31)*0.5)+5+ポイント)*性格補正)」です。性格補正は上昇1.1、無補正1.0、下降0.9です。これらの式で実数値を考慮し、調整ラインを逆算してください。",
     "種族データやマスターデータにない性格、持ち物、特性、技、フォルムを捏造せず、提示された候補を使ってください。不明な情報を推測で断定しないでください。",
-    "メガシンカ可能なポケモンをメガシンカさせる提案では、itemを必ず「メガストーン」にし、megaFormに提示されたメガ後のフォルム名を指定してください。通常フォルムの提案ではmegaFormをnullにしてください。",
+    "メガシンカ可能なポケモンをメガシンカさせる提案では、itemを必ず「メガストーン」にし、megaFormに提示されたメガ後のフォルム名を指定してください。通常フォルムの提案ではmegaFormを空文字にしてください。",
     "movesは最大4つにしてください。benchmarksには攻撃・防御・素早さの調整ラインと結果を簡潔に記載してください。"
   ].join("\n");
 }
@@ -116,22 +115,55 @@ function clampPoint(value) {
 /**
  * APIレスポンスから日本語のエラー内容を作成する。
  * @param {number} status HTTPステータスコード。
+ * @param {string} model リクエストしたGeminiモデル名。
+ * @param {string} detail APIが返したエラー詳細。
  * @returns {string} 利用者向けのエラーメッセージ。
  */
-function getHttpErrorMessage(status) {
+function getHttpErrorMessage(status, model, detail) {
+  const detailMessage = detail ? `\nGoogle APIの詳細: ${detail}` : "";
   if (status === 400) {
-    return "Gemini APIへのリクエストが正しくありません。モデルや入力内容を確認してください。";
+    return `Gemini APIへのリクエストが正しくありません。モデルや入力内容を確認してください。${detailMessage}`;
   }
   if (status === 401 || status === 403) {
-    return "Gemini APIキーが無効か、APIの利用が許可されていません。API設定を確認してください。";
+    return `Gemini APIキーが無効か、APIの利用が許可されていません。API設定を確認してください。${detailMessage}`;
   }
   if (status === 429) {
-    return "Gemini APIの利用上限に達しました。時間をおいてから再度お試しください。";
+    return `Gemini APIの利用上限に達しました。時間をおいてから再度お試しください。${detailMessage}`;
+  }
+  if (status === 404) {
+    return `Geminiモデル「${model}」が見つからないか、このAPIキーでは利用できません。API設定で利用可能なモデルを選択してください。${detailMessage}`;
   }
   if (status >= 500) {
-    return "Gemini APIでサーバーエラーが発生しました。時間をおいてから再度お試しください。";
+    return `Gemini APIでサーバーエラーが発生しました（HTTP ${status}、モデル: ${model}）。時間をおいてから再度お試しください。${detailMessage}`;
   }
-  return `Gemini APIへのリクエストに失敗しました（HTTP ${status}）。`;
+  return `Gemini APIへのリクエストに失敗しました（HTTP ${status}）。${detailMessage}`;
+}
+
+/**
+ * Gemini APIのエラーレスポンスから診断用の詳細を読み取る。
+ * @param {Response} response HTTPエラーレスポンス。
+ * @returns {Promise<string>} APIが返したエラー詳細。
+ */
+async function readApiErrorDetail(response) {
+  let responseText;
+  try {
+    responseText = await response.text();
+  } catch {
+    return "エラー詳細を読み取れませんでした。";
+  }
+  if (!responseText) {
+    return "";
+  }
+
+  try {
+    const body = JSON.parse(responseText);
+    if (typeof body?.error?.message === "string") {
+      return body.error.message.slice(0, 500);
+    }
+  } catch {
+    return responseText.slice(0, 500);
+  }
+  return responseText.slice(0, 500);
 }
 
 /**
@@ -205,9 +237,8 @@ export async function requestBuildAdjustment(speciesData, currentBuild, userRequ
           }]
         }],
         generationConfig: {
-          response_mime_type: "application/json",
-          response_schema: ADJUSTMENT_RESPONSE_SCHEMA,
-          temperature: 0.2
+          responseMimeType: "application/json",
+          responseJsonSchema: ADJUSTMENT_RESPONSE_SCHEMA
         }
       })
     });
@@ -216,7 +247,8 @@ export async function requestBuildAdjustment(speciesData, currentBuild, userRequ
   }
 
   if (!response.ok) {
-    throw new Error(getHttpErrorMessage(response.status));
+    const detail = await readApiErrorDetail(response);
+    throw new Error(getHttpErrorMessage(response.status, model, detail));
   }
 
   let responseBody;
