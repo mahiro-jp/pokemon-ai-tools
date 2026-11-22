@@ -213,13 +213,14 @@ export async function requestBuildAdjustment(speciesData, currentBuild, userRequ
   }
 
   const model = getGeminiModel();
-  const endpoint = `${API_ENDPOINT}/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const endpoint = `${API_ENDPOINT}/${encodeURIComponent(model)}:generateContent`;
   let response;
   try {
     response = await globalThis.fetch(endpoint, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "x-goog-api-key": apiKey
       },
       body: JSON.stringify({
         systemInstruction: {
