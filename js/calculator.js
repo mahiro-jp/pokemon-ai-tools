@@ -98,7 +98,7 @@ export function calculateStats(speciesData, build, naturesData) {
   const hpBase = Number(baseStats.hp) || 0;
   const hp = hpBase === 1
     ? 1
-    : Math.floor((hpBase * 2 + IV + points.hp) * 0.5) + 60;
+    : Math.floor((hpBase * 2 + IV) * 0.5) + 60 + points.hp;
 
   const nature = naturesData?.find((candidate) => candidate.name === build.nature);
   const result = { hp, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
@@ -108,7 +108,7 @@ export function calculateStats(speciesData, build, naturesData) {
     if (nature?.up === stat) multiplier = 1.1;
     if (nature?.down === stat) multiplier = 0.9;
     result[stat] = Math.floor(
-      (Math.floor((baseStat * 2 + IV + points[stat]) * 0.5) + 5) * multiplier
+      (Math.floor((baseStat * 2 + IV) * 0.5) + 5 + points[stat]) * multiplier
     );
   }
   return result;
