@@ -1,0 +1,122 @@
+[
+  {
+    "id": "earthquake",
+    "name": "じしん",
+    "type": "ground",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "outrage",
+    "name": "げきりん",
+    "type": "dragon",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "iron-head",
+    "name": "アイアンヘッド",
+    "type": "steel",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "flamethrower",
+    "name": "かえんほうしゃ",
+    "type": "fire",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "flare-blitz",
+    "name": "フレアドライブ",
+    "type": "fire",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "shadow-ball",
+    "name": "シャドーボール",
+    "type": "ghost",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "make-it-rain",
+    "name": "ゴールドラッシュ",
+    "type": "steel",
+    "category": "special",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": true
+  },
+  {
+    "id": "moonblast",
+    "name": "ムーンフォース",
+    "type": "fairy",
+    "category": "special",
+    "power": 95,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "stone-edge",
+    "name": "ストーンエッジ",
+    "type": "rock",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 80,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "psychic",
+    "name": "サイコキネシス",
+    "type": "psychic",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  },
+  {
+    "id": "close-combat",
+    "name": "インファイト",
+    "type": "fighting",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "isContact": true,
+    "isSpread": false
+  },
+  {
+    "id": "dragon-pulse",
+    "name": "りゅうのはどう",
+    "type": "dragon",
+    "category": "special",
+    "power": 85,
+    "accuracy": 100,
+    "isContact": false,
+    "isSpread": false
+  }
+]

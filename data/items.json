@@ -1,0 +1,58 @@
+[
+  {
+    "id": "mega-stone",
+    "name": "メガストーン",
+    "effectType": "mega_stone",
+    "multiplier": 1.0,
+    "description": "メガシンカ可能なポケモンをメガシンカさせる"
+  },
+  {
+    "id": "choice-atk",
+    "name": "こだわりハチマキ",
+    "effectType": "choice_atk",
+    "multiplier": 1.5,
+    "description": "攻撃を1.5倍にするが、同じ技しか使えなくなる"
+  },
+  {
+    "id": "choice-spa",
+    "name": "こだわりメガネ",
+    "effectType": "choice_spa",
+    "multiplier": 1.5,
+    "description": "特攻を1.5倍にするが、同じ技しか使えなくなる"
+  },
+  {
+    "id": "choice-spe",
+    "name": "こだわりスカーフ",
+    "effectType": "choice_spe",
+    "multiplier": 1.5,
+    "description": "素早さを1.5倍にするが、同じ技しか使えなくなる"
+  },
+  {
+    "id": "life-orb",
+    "name": "いのちのたま",
+    "effectType": "life_orb",
+    "multiplier": 1.3,
+    "description": "攻撃技の威力を1.3倍にする代わりに、毎ターンHPを失う"
+  },
+  {
+    "id": "assault-vest",
+    "name": "とつげきチョッキ",
+    "effectType": "assault_vest",
+    "multiplier": 1.0,
+    "description": "特防を1.5倍にするが、変化技が使えなくなる"
+  },
+  {
+    "id": "focus-sash",
+    "name": "きあいのタスキ",
+    "effectType": "focus_sash",
+    "multiplier": 1.0,
+    "description": "HPが満タンのとき、攻撃技で一撃で倒されてもHPを1だけ残す"
+  },
+  {
+    "id": "none",
+    "name": "なし",
+    "effectType": "none",
+    "multiplier": 1.0,
+    "description": "持ち物なし"
+  }
+]

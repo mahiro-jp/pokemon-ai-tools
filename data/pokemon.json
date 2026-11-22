@@ -1,0 +1,103 @@
+[
+  {
+    "id": "garchomp",
+    "name": "ガブリアス",
+    "types": ["dragon", "ground"],
+    "abilities": ["さめはだ", "すながくれ", "あらくれもの"],
+    "baseStats": {
+      "hp": 108,
+      "atk": 130,
+      "def": 95,
+      "spa": 80,
+      "spd": 85,
+      "spe": 102
+    },
+    "megaForms": [
+      {
+        "name": "メガガブリアス",
+        "types": ["dragon", "ground"],
+        "ability": "さめはだ",
+        "baseStats": {
+          "hp": 108,
+          "atk": 170,
+          "def": 115,
+          "spa": 120,
+          "spd": 95,
+          "spe": 92
+        }
+      }
+    ]
+  },
+  {
+    "id": "charizard",
+    "name": "リザードン",
+    "types": ["fire", "flying"],
+    "abilities": ["もうか", "日照り", "サンパワー"],
+    "baseStats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spa": 109,
+      "spd": 85,
+      "spe": 100
+    },
+    "megaForms": [
+      {
+        "name": "メガリザードンX",
+        "types": ["fire", "dragon"],
+        "ability": "かたいツメ",
+        "baseStats": {
+          "hp": 78,
+          "atk": 130,
+          "def": 111,
+          "spa": 130,
+          "spd": 85,
+          "spe": 100
+        }
+      },
+      {
+        "name": "メガリザードンY",
+        "types": ["fire", "flying"],
+        "ability": "日照り",
+        "baseStats": {
+          "hp": 78,
+          "atk": 104,
+          "def": 78,
+          "spa": 159,
+          "spd": 115,
+          "spe": 100
+        }
+      }
+    ]
+  },
+  {
+    "id": "gholdengo",
+    "name": "サーフゴー",
+    "types": ["steel", "ghost"],
+    "abilities": ["おうごんのからだ"],
+    "baseStats": {
+      "hp": 87,
+      "atk": 60,
+      "def": 95,
+      "spa": 133,
+      "spd": 91,
+      "spe": 84
+    },
+    "megaForms": []
+  },
+  {
+    "id": "flutter-mane",
+    "name": "ハバタクカミ",
+    "types": ["ghost", "fairy"],
+    "abilities": ["おもかげ"],
+    "baseStats": {
+      "hp": 55,
+      "atk": 55,
+      "def": 55,
+      "spa": 135,
+      "spd": 135,
+      "spe": 135
+    },
+    "megaForms": []
+  }
+]
