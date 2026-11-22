@@ -5,6 +5,7 @@ import {
   saveGeminiModel
 } from "./storage.js";
 import { initManagerUi } from "./ui/managerUi.js";
+import { initDamageUi } from "./ui/damageUi.js";
 
 /**
  * アプリ内で共有するマスターデータ。
@@ -208,4 +209,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initManagerUi(masterData, () => {
     document.dispatchEvent(new CustomEvent("pokemon-builds-changed"));
   });
+  initDamageUi(masterData);
 });
